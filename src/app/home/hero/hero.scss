@@ -1,0 +1,17 @@
+@import '../../../styles.scss';
+
+section {
+    @include dFlex($fd: column);
+
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url('../../../../public/img/Hero_Background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+
+
+// da passt noch was mit der height nicht... bzw. dFlex?
