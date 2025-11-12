@@ -1,0 +1,23 @@
+@import '../../../styles.scss';
+
+
+// :host bezieht sich auf das <app-header>-Tag
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding-left: $plr-medium;
+  padding-right: $plr-medium;
+}
+
+
+// Differenzierung :host und header?
+
+nav {
+    @include dFlex($jc: flex-start, $g: 20px);
+    height: 80px;
+    flex: wrap;
+
+}
