@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+// Colors später auslagern:
+$color-highlight: #FFCA1B;
+$color-bg-dark: #1c1c1c;
+$color-white: #ffffff;
+$color-grey: #d9d9d9;
+$color-gradient-highlight: linear-gradient(90deg, #1C1C1C 23%, #FFCA1B 100%);
+
+// mixins später auslagern:
+
+// @mixin borderStyling($bStyle) {
+//     border-radius: 12px; 
+//     border: 2px $bStyle white; 
+// }
+
+@mixin dFlex($fd: row, $jc: center, $ai: center, $g: 0px) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color: $color-white;
+}
+
+body {
+    background-color: $color-bg-dark;
+}
+
+h1 {
+    // font-family: KARLA;
+    font-size: 128px;
+    font-weight: bold;
+    color: $color-grey;
+}
+
+h2 {
+    // font-family: ;
+    font-size: 64px;
+    font-weight: 700; //?
+    font-style: bold; //?
+    color: $color-highlight;
+}
