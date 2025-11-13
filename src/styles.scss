@@ -5,7 +5,7 @@ $color-white: #ffffff;
 $color-grey: #d9d9d9;
 $color-gradient-highlight: linear-gradient(90deg, #1C1C1C 23%, #FFCA1B 100%);
 
-$plr-medium: 40px;
+$plr-medium: 50px;
 
 $font-basic: 'Karla', sans-serif;
 $font-highlight: 'Fira Code', monospace; 
@@ -58,6 +58,41 @@ a {
     font-size: 20px;
     text-decoration: none;
 }
+
+// button {
+// //   @include dFlex($jc: center, $ai: center); // dein Mixin
+// //   padding: 10px 30px;
+//   border-radius: 999px;         // macht die "Pille"
+//   border: 1px solid $color-white;
+// //   background: transparent;
+//   color: $color-white;
+//   font-family: $font-basic; 
+//   font-size: 20px;
+//   font-weight: 400;
+//   letter-spacing: 0;
+  
+// //   transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+// }
+
+button {
+  cursor: pointer;
+
+  font-family: $font-basic;   
+  font-size: 18px;
+  font-weight: 400;               
+  line-height: 1.2;                
+  letter-spacing: 0;     
+  color: $color-white;   
+
+  background-color: transparent;
+
+  border: 1px solid $color-white;
+  border-radius: 999px;  
+
+  padding: 12px 20px;
+}
+
+
 
 /* fira-code-regular - latin */
 @font-face {
