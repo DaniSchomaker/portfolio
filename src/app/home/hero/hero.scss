@@ -26,27 +26,56 @@ p {
   margin: 16px;
 }
 
-.hero_buttons {
+.hero-buttons {
   @include dFlex($g: 28px);
   margin-top: 40px;
 }
 
-.line_arrow_wrapper {
-  @include dFlex();
+.line-arrow-wrapper {
+  @include dFlex($fd: column, $g: 24px);
+  
   position: absolute;
-  left: $plr-medium; // gleiche Einrückung wie Header
+  left: $p-medium; // gleiche Einrückung wie Header
   bottom: 0px; // Abstand vom unteren Rand
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   gap: 24px;
 
-  height: 250px;
-  width: 50px;
-  border: 2px solid white;
+//   height: 250px;
+//   width: 50px;
+//   border: 2px solid white;
 }
 
-.line_left {
-  height: 150px;
-  width: 1px;
+.arrow-container {
+    @include dFlex();
+    height: 48px;
+    width: 30px;
+    border: 1px solid $color-highlight;
+    border-radius: 999px;
+    overflow: hidden;
+
+    >img {
+        height: 15px;
+    }
 }
+
+.arrow{
+    animation: arrowDownAnimation 1s linear infinite;
+}
+
+@keyframes arrowDownAnimation {
+  0% {
+    transform: translateY(0px); // Startposition: nicht verschoben
+  }
+  33% {
+    transform: translateY(6px); // Endposition: 100px nach rechts verschoben
+  }
+  100% {
+    transform: translateY(0px); // Endposition: 100px nach rechts verschoben
+  }
+}
+
+.line-left {
+    height: 200px;
+    width:1px;
+    background-color: $color-highlight;
+    // border: 2px solid red;
+}
+
