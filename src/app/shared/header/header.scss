@@ -1,6 +1,5 @@
 @import '../../../styles.scss';
 
-
 // :host bezieht sich auf das <app-header>-Tag
 :host {
   position: absolute;
@@ -10,14 +9,20 @@
   z-index: 1000;
   padding-left: $plr-medium;
   padding-right: $plr-medium;
+
 }
 
-
-// Differenzierung :host und header?
+header {
+  @include dFlex($jc: space-between, $ai: center);
+  height: 80px;
+}
 
 nav {
-    @include dFlex($jc: flex-start, $g: 20px);
-    height: 80px;
-    flex: wrap;
+  @include dFlex($jc: flex-start, $ai: center, $g: 20px);
 
+  font-family: $font-highlight;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: $color-white;
 }
