@@ -9,7 +9,6 @@
   z-index: 1000;
   padding-left: $p-medium;
   padding-right: $p-medium;
-
 }
 
 header {
@@ -18,11 +17,31 @@ header {
 }
 
 nav {
-  @include dFlex($jc: flex-start, $ai: center, $g: 20px);
-
+  @include dFlex($jc: flex-start, $ai: center, $g: 24px);
   font-family: $font-highlight;
   font-size: 20px;
   font-weight: 400; 
   letter-spacing: -0.03em; 
   color: $color-white; 
 }
+
+nav a {
+  position: relative;
+}
+
+nav a .hover-point {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-highlight;
+  opacity: 0;
+}
+
+nav a:hover .hover-point {
+  opacity: 1;
+}
+
