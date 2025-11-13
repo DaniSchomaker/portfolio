@@ -45,3 +45,17 @@ nav a:hover .hover-point {
   opacity: 1;
 }
 
+.logo {
+  width: 133px;
+  height: 48px;
+  background-image: url('../../../../public/img/hero/Logo-filled.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: background-image .1s ease;
+}
+
+// #To Do: beim hovern "rückt das Bild noch etwas nach links
+.logo:hover {
+  background-image: url('../../../../public/img/hero/Logo-outlines.svg');
+}
+
