@@ -7,8 +7,8 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding-left: $plr-medium;
-  padding-right: $plr-medium;
+  padding-left: $p-medium;
+  padding-right: $p-medium;
 
 }
 
@@ -22,7 +22,7 @@ nav {
 
   font-family: $font-highlight;
   font-size: 20px;
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  color: $color-white;
+  font-weight: 400; 
+  letter-spacing: -0.03em; 
+  color: $color-white; 
 }
