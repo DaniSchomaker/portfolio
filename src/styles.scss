@@ -25,6 +25,13 @@ $font-highlight: 'Fira Code', monospace;
   gap: $g;
 }
 
+@mixin dot ($color: $color-highlight) {
+  height: 6.4px;
+  width: 6.4px;
+  border-radius: 50%;
+  background-color: $color;
+}
+
 *{
     margin: 0;
     box-sizing: border-box;

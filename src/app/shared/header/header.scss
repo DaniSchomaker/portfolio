@@ -30,14 +30,11 @@ nav a {
 }
 
 nav a .hover-point {
+  @include dot();
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: -6.4px;
-  width: 6.4px;
-  height: 6.4px;
-  border-radius: 50%;
-  background: $color-highlight;
   opacity: 0;
 }
 

@@ -1,9 +1,5 @@
 @import '../../../styles.scss';
 
-.test {
-  border: 3px solid $color-highlight;
-}
-
 section {
   @include dFlex($fd: column);
 
@@ -11,6 +7,7 @@ section {
   height: 100vh;
   width: 100%;
   background-image: url('../../../../public/img/Hero_Background.png');
+  // background: linear-gradient(30deg, #1C1C1C 23%, #FFCA1B 100%);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -33,10 +30,9 @@ p {
 
 .line-arrow-wrapper {
   @include dFlex($fd: column, $g: 24px);
-
   position: absolute;
-  left: $p-medium; 
-  bottom: 0px; 
+  left: $p-medium;
+  bottom: 0px;
 }
 
 .line-left {
@@ -47,10 +43,9 @@ p {
 
 .line-links-wrapper {
   @include dFlex($fd: column, $g: 24px);
-
   position: absolute;
-  right: $p-medium; 
-  bottom: 0px; 
+  right: $p-medium;
+  bottom: 0px;
 }
 
 .line-right {
@@ -58,9 +53,6 @@ p {
   width: 1px;
   background-color: $color-highlight;
 }
-
-
-
 
 .arrow-container {
   @include dFlex();
@@ -91,8 +83,6 @@ p {
   }
 }
 
-
-
 .banner {
   @include dFlex();
 
@@ -102,7 +92,7 @@ p {
   width: 100vw;
   background-color: rgba($color: $color-white, $alpha: 0.12);
   transform: rotate(-3deg);
- 
+
   > p {
     animation: bannerAnimation 20s linear infinite;
     font-family: $font-basic;
@@ -126,11 +116,8 @@ p {
 }
 
 .dot {
+  @include dot();
   display: inline-block;
-  height: 6.4px;
-  width: 6.4px;
-  border-radius: 50%;
-  background-color: $color-highlight;
   vertical-align: middle;
   margin: 0px 40px;
 }
