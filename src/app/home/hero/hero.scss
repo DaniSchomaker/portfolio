@@ -33,49 +33,104 @@ p {
 
 .line-arrow-wrapper {
   @include dFlex($fd: column, $g: 24px);
-  
-  position: absolute;
-  left: $p-medium; // gleiche Einrückung wie Header
-  bottom: 0px; // Abstand vom unteren Rand
 
-//   height: 250px;
-//   width: 50px;
-//   border: 2px solid white;
+  position: absolute;
+  left: $p-medium; 
+  bottom: 0px; 
 }
+
+.line-left {
+  height: 240px;
+  width: 1px;
+  background-color: $color-highlight;
+}
+
+.line-links-wrapper {
+  @include dFlex($fd: column, $g: 24px);
+
+  position: absolute;
+  right: $p-medium; 
+  bottom: 0px; 
+}
+
+.line-right {
+  height: 186px;
+  width: 1px;
+  background-color: $color-highlight;
+}
+
+
+
 
 .arrow-container {
-    @include dFlex();
-    height: 48px;
-    width: 30px;
-    border: 1px solid $color-highlight;
-    border-radius: 999px;
-    overflow: hidden;
+  @include dFlex();
+  height: 48px;
+  width: 30px;
+  border: 1px solid $color-highlight;
+  border-radius: 999px;
+  overflow: hidden;
 
-    >img {
-        height: 15px;
-    }
+  > img {
+    height: 15px;
+  }
 }
 
-.arrow{
-    animation: arrowDownAnimation 1s linear infinite;
+.arrow {
+  animation: arrowDownAnimation 1s linear infinite;
 }
 
 @keyframes arrowDownAnimation {
   0% {
-    transform: translateY(0px); // Startposition: nicht verschoben
+    transform: translateY(0px);
   }
   33% {
-    transform: translateY(6px); // Endposition: 100px nach rechts verschoben
+    transform: translateY(6px);
   }
   100% {
-    transform: translateY(0px); // Endposition: 100px nach rechts verschoben
+    transform: translateY(0px);
   }
 }
 
-.line-left {
-    height: 200px;
-    width:1px;
-    background-color: $color-highlight;
-    // border: 2px solid red;
+
+
+.banner {
+  @include dFlex();
+
+  position: absolute;
+  bottom: 70px;
+  height: 60px;
+  width: 100vw;
+  background-color: rgba($color: $color-white, $alpha: 0.12);
+  transform: rotate(-3deg);
+ 
+  > p {
+    animation: bannerAnimation 20s linear infinite;
+    font-family: $font-basic;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: $color-highlight;
+    white-space: nowrap; // verhindert Zeilenumbruch
+    margin: 0;
+  }
 }
 
+@keyframes bannerAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.dot {
+  display: inline-block;
+  height: 6.4px;
+  width: 6.4px;
+  border-radius: 50%;
+  background-color: $color-highlight;
+  vertical-align: middle;
+  margin: 0px 40px;
+}
