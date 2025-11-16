@@ -28,11 +28,23 @@ p {
   margin-top: 40px;
 }
 
-.line-arrow-wrapper {
-  @include dFlex($fd: column, $g: 24px);
+.line-arrow-wrapper,
+.line-links-wrapper {
+  @include dFlex($fd: column, $g: 20px);
   position: absolute;
-  left: $p-medium;
   bottom: 0px;
+}
+
+.line-arrow-wrapper {
+  left: $p-medium;
+}
+
+.line-links-wrapper {
+  right: $p-medium;
+}
+
+.social-media-icons {
+  @include dFlex($fd: column, $g: 8px)
 }
 
 .line-left {
@@ -41,12 +53,7 @@ p {
   background-color: $color-highlight;
 }
 
-.line-links-wrapper {
-  @include dFlex($fd: column, $g: 24px);
-  position: absolute;
-  right: $p-medium;
-  bottom: 0px;
-}
+
 
 .line-right {
   height: 186px;
@@ -84,7 +91,7 @@ p {
 }
 
 .banner {
-  @include dFlex();
+  @include dFlex($jc: flex-start, $ai: center);
 
   position: absolute;
   bottom: 70px;
@@ -92,18 +99,23 @@ p {
   width: 100vw;
   background-color: rgba($color: $color-white, $alpha: 0.12);
   transform: rotate(-3deg);
+  overflow: hidden; 
+}
 
-  > p {
-    animation: bannerAnimation 20s linear infinite;
-    font-family: $font-basic;
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: 0;
-    color: $color-highlight;
-    white-space: nowrap; // verhindert Zeilenumbruch
-    margin: 0;
-  }
+.banner-track {
+  display: inline-flex;
+  animation: bannerAnimation 20s linear infinite;
+}
+
+.banner-track p {
+  font-family: $font-basic;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-highlight;
+  white-space: nowrap; // verhindert Zeilenumbruch
+  margin: 0;
 }
 
 @keyframes bannerAnimation {
@@ -115,9 +127,9 @@ p {
   }
 }
 
-.dot {
+.banner-dot {
   @include dot();
   display: inline-block;
   vertical-align: middle;
-  margin: 0px 40px;
+  margin: 0 40px;
 }
