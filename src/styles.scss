@@ -1,5 +1,6 @@
 // Variablen (#später auslagern):
-$color-highlight: #FFCA1B;
+// $color-highlight: #FFCA1B;
+$color-highlight: #e8b81c;
 $color-bg-dark: #1c1c1c;
 $color-white: #ffffff;
 $color-grey: #d9d9d9;
@@ -37,12 +38,15 @@ $font-highlight: 'Fira Code', monospace;
     box-sizing: border-box;
     scroll-behavior: smooth;
     color: $color-white;
+    cursor: default;
 }
 
 .content-container {
   max-width: 1440px;
   padding: 0;
   margin: 0 auto; /* damit der Content in der Mitte des Screens angezeigt wird und nicht linksbündig  */
+
+  border: 2px red solid;
 }
 
 html, body {
