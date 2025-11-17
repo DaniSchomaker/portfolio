@@ -7,6 +7,7 @@ $color-grey: #d9d9d9;
 $color-gradient-highlight: linear-gradient(90deg, #1C1C1C 23%, #FFCA1B 100%);
 
 $p-medium: 50px;
+$p-large: 100px;
 
 $font-basic: 'Karla', sans-serif;
 $font-highlight: 'Fira Code', monospace; 
@@ -54,6 +55,8 @@ html, body {
     font-family: $font-basic;
 }
 
+
+
 h1 {
   font-family: $font-basic;
   font-weight: 700;         
@@ -69,6 +72,16 @@ h2 {
     font-weight: 700; //?
     font-style: bold; //?
     color: $color-highlight;
+}
+
+h3 {
+  font-family: $font-highlight;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: $color-highlight;
+  padding: 32px;
 }
 
 a {
@@ -93,6 +106,11 @@ button {
   border-radius: 999px;  
 
   padding: 12px 20px;
+}
+
+.p-lr {
+  padding-left: $p-medium;
+  padding-right: $p-medium;
 }
 
 
