@@ -39,6 +39,12 @@ $font-highlight: 'Fira Code', monospace;
     color: $color-white;
 }
 
+.content-container {
+  max-width: 1440px;
+  padding: 0;
+  margin: 0 auto; /* damit der Content in der Mitte des Screens angezeigt wird und nicht linksbündig  */
+}
+
 html, body {
     background-color: $color-bg-dark;
     font-family: $font-basic;

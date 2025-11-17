@@ -1,6 +1,6 @@
 @import '../../../styles.scss';
 
-section {
+.hero {
   @include dFlex($fd: column);
 
   position: relative;
@@ -12,6 +12,14 @@ section {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
+
+.hero .content-container {
+  @include dFlex($fd: column);
+  position: relative;
+  height: 100%;
+  padding: 0 $p-medium;  
+}
+
 
 p {
   font-family: $font-highlight;
@@ -41,10 +49,20 @@ p {
 
 .line-links-wrapper {
   right: $p-medium;
+
+  > p {
+    transform: rotate(-90deg);
+    font-family: $font-basic;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: $color-white;
+  }
 }
 
 .social-media-icons {
-  @include dFlex($fd: column, $g: 8px)
+  @include dFlex($fd: column, $g: 8px);
 }
 
 .line-left {
@@ -52,8 +70,6 @@ p {
   width: 1px;
   background-color: $color-highlight;
 }
-
-
 
 .line-right {
   height: 186px;
@@ -90,24 +106,36 @@ p {
   }
 }
 
+// .banner {
+//   @include dFlex($jc: flex-start, $ai: center);
+
+//   position: absolute;
+//   bottom: 70px;
+//   height: 60px;
+//   width: 100vw;
+//   background-color: rgba($color: $color-white, $alpha: 0.12);
+//   transform: rotate(-3deg);
+//   overflow: hidden;
+// }
+
 .banner {
   @include dFlex($jc: flex-start, $ai: center);
 
   position: absolute;
   bottom: 70px;
   height: 60px;
-  width: 100vw;
+  width: 100%; 
   background-color: rgba($color: $color-white, $alpha: 0.12);
   transform: rotate(-3deg);
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-.banner-track {
+.banner-wrapper {
   display: inline-flex;
   animation: bannerAnimation 20s linear infinite;
 }
 
-.banner-track p {
+.banner-wrapper p {
   font-family: $font-basic;
   font-size: 32px;
   font-weight: 400;
