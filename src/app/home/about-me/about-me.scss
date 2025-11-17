@@ -4,19 +4,12 @@
 //     background-color: white; // später raus!
 // }
 
-h3 {
-  font-family: $font-highlight;
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: $color-highlight;
-  padding: 32px;
-}
+
 
 .layout {
   @include dFlex($ai:flex-start, $g: $p-medium);
-  padding: $p-medium;
+  margin: $p-large 0;
+  // padding: $p-medium;
   
 //   background-color: white;
 }

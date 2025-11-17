@@ -4,8 +4,8 @@
 :host {
   position: absolute;
   top: 0;
-  left: $p-medium;
-  right: $p-medium;
+  left: 0;
+  right: 0;
   z-index: 1000;
 }
 
@@ -16,7 +16,6 @@ header {
 .content-container {
   @include dFlex($jc: space-between, $ai: center);
   height: 100%;
-  // padding: 0 $p-medium;
 }
 
 nav {
@@ -26,7 +25,6 @@ nav {
   font-weight: 400;
   letter-spacing: -0.03em;
   color: $color-white;
-  padding-left: $p-medium;
 }
 
 nav a {
