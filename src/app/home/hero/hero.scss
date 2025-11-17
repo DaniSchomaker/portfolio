@@ -11,17 +11,19 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+
+  padding-left: $p-medium;
+  padding-right: $p-medium;
 }
 
-.hero .content-container {
+.content-container {
   @include dFlex($fd: column);
   position: relative;
-  height: 100%;
-  padding: 0 $p-medium;  
+  height: 100vh;
+  width: 100%;
 }
 
-
-p {
+.job-title {
   font-family: $font-highlight;
   font-size: 40px;
   font-weight: 400;
@@ -36,45 +38,17 @@ p {
   margin-top: 40px;
 }
 
-.line-arrow-wrapper,
-.line-links-wrapper {
+//////// Linie links mit Pfeil
+
+.line-arrow-wrapper {
   @include dFlex($fd: column, $g: 20px);
   position: absolute;
   bottom: 0px;
 }
 
 .line-arrow-wrapper {
+  // ja??
   left: $p-medium;
-}
-
-.line-links-wrapper {
-  right: $p-medium;
-
-  > p {
-    transform: rotate(-90deg);
-    font-family: $font-basic;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: 0;
-    color: $color-white;
-  }
-}
-
-.social-media-icons {
-  @include dFlex($fd: column, $g: 8px);
-}
-
-.line-left {
-  height: 240px;
-  width: 1px;
-  background-color: $color-highlight;
-}
-
-.line-right {
-  height: 186px;
-  width: 1px;
-  background-color: $color-highlight;
 }
 
 .arrow-container {
@@ -106,25 +80,59 @@ p {
   }
 }
 
-// .banner {
-//   @include dFlex($jc: flex-start, $ai: center);
+//////// Linie rechts mit Social-Media-Icons
 
-//   position: absolute;
-//   bottom: 70px;
-//   height: 60px;
-//   width: 100vw;
-//   background-color: rgba($color: $color-white, $alpha: 0.12);
-//   transform: rotate(-3deg);
-//   overflow: hidden;
-// }
+.line-links-wrapper {
+  @include dFlex($fd: column, $g: 20px);
+  position: absolute;
+  bottom: 0px;
+  right: 0; // ja?
 
+  > p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  > p:hover {
+    cursor: pointer;
+    color: $color-highlight;
+  }
+}
+
+.social-media-icons {
+  @include dFlex($fd: column, $g: 8px);
+
+  > a {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+.hover-point {
+  @include dot();
+}
+
+.line-left {
+  height: 240px;
+  width: 1px;
+  background-color: $color-highlight;
+}
+
+.line-right {
+  height: 186px;
+  width: 1px;
+  background-color: $color-highlight;
+}
+
+//////// Banner ////////
 .banner {
   @include dFlex($jc: flex-start, $ai: center);
 
   position: absolute;
   bottom: 70px;
   height: 60px;
-  width: 100%; 
+  left: 0; 
+  right: 0;
   background-color: rgba($color: $color-white, $alpha: 0.12);
   transform: rotate(-3deg);
   overflow: hidden;
@@ -133,17 +141,17 @@ p {
 .banner-wrapper {
   display: inline-flex;
   animation: bannerAnimation 20s linear infinite;
-}
 
-.banner-wrapper p {
-  font-family: $font-basic;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: 0;
-  color: $color-highlight;
-  white-space: nowrap; // verhindert Zeilenumbruch
-  margin: 0;
+  > p {
+    font-family: $font-basic;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: $color-highlight;
+    white-space: nowrap; // verhindert Zeilenumbruch
+    margin: 0;
+  }
 }
 
 @keyframes bannerAnimation {

@@ -4,20 +4,19 @@
 :host {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: $p-medium;
+  right: $p-medium;
   z-index: 1000;
 }
 
 header {
-  width: 100%;
   height: 80px;
 }
 
-header .content-container {
+.content-container {
   @include dFlex($jc: space-between, $ai: center);
   height: 100%;
-  padding: 0 $p-medium;
+  // padding: 0 $p-medium;
 }
 
 nav {
@@ -27,6 +26,7 @@ nav {
   font-weight: 400;
   letter-spacing: -0.03em;
   color: $color-white;
+  padding-left: $p-medium;
 }
 
 nav a {
