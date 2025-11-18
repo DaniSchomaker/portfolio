@@ -1,0 +1,93 @@
+@import '../../../styles.scss';
+
+.layout {
+  @include dFlex($ai: flex-start, $g: $p-medium);
+  margin: $p-large 0;
+}
+
+/* Linke Spalte (Textbereich) */
+// #Frage: aus About-me nehmen?
+.info-column {
+  @include dFlex($fd: column, $ai: flex-start, $g: 10px);
+  flex: 1;
+
+  height: 500px;
+  width: 500px;
+  border: 2px green solid;
+}
+
+.label {
+  // doppelt in about-me? margin-top anders
+  font-size: 24px;
+  font-weight: 700; // hier wirklich anders als bei "Who I am"?
+  line-height: 1;
+  letter-spacing: 0;
+  color: $color-highlight;
+
+  //   margin-top: 200px;
+}
+
+.info-card {
+  // doppelt in about-me?
+  border: 1px $color-highlight solid;
+  border-radius: 30px;
+  background-color: rgb(31, 46, 43); // ändern!
+
+  width: 520px;
+  height: 503px;
+
+  padding: 0;
+}
+
+.info-card-general {
+  // doppelt in about-me
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-white;
+
+  padding: 8px 32px 32px 32px;
+}
+
+.span-wrapper {
+  padding-left: 32px;
+}
+
+.span {
+  font-family: $font-highlight;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.span-highlight {
+  color: $color-highlight;
+}
+
+.info-card-endnote {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-white;
+
+  padding: 8px 32px 32px 32px;
+}
+
+
+
+
+
+
+
+
+/* Rechte Spalte (Iconbereich) */
+.icons-column {
+  flex: 1;
+  border: 2px red solid;
+
+  height: 500px;
+  width: 500px;
+}
