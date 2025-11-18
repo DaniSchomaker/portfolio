@@ -1,11 +1,20 @@
 @import '../../../styles.scss';
 
+.skills {
+}
+
+.content-container {
+  background-image: url('../../../../public/img/skills/skills-bg.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .layout {
   @include dFlex($ai: flex-start, $g: $p-medium);
   margin: $p-large 0;
 }
 
-//////// Linke Spalte (Textbereich) 
+//////// Linke Spalte (Textbereich)
 // #Frage: aus About-me nehmen?
 
 .info-column {
@@ -81,7 +90,7 @@
   padding: 32px 32px;
 }
 
-//////// Rechte Spalte (Iconbereich) 
+//////// Rechte Spalte (Iconbereich)
 .icons-column {
   flex: 1;
   border: 2px red solid;
