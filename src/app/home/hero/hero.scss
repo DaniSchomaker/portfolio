@@ -38,28 +38,32 @@
 }
 
 .hero-buttons button {
-  // white-space: nowrap;
+  overflow: hidden;
   transition: color 0.5s ease, border-color 0.5s ease;
-  
+
   &:hover {
-    color: $color-highlight;
-    border-color: $color-highlight;    
+    border-color: $color-highlight;
   }
 }
 
-.hero-buttons button:hover .button-text {  
-  animation: buttonAnimation 1s linear infinite;
+.hero-buttons button:hover .button-text {
+  animation: buttonAnimation 3s linear infinite;
+  color: $color-highlight;
 }
+
 
 @keyframes buttonAnimation {
   0% {
     transform: translateX(0);
   }
-  // 50% {
-  //   transform: translateX(-200px);
-  // }
+  49.99% {
+    transform: translateX(-180px);
+  }
+  50% {
+    transform: translateX(180px);
+  }
   100% {
-    transform: translateX(-200px);
+    transform: translateX(0);
   }
 }
 
