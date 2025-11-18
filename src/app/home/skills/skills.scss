@@ -5,8 +5,9 @@
   margin: $p-large 0;
 }
 
-/* Linke Spalte (Textbereich) */
+//////// Linke Spalte (Textbereich) 
 // #Frage: aus About-me nehmen?
+
 .info-column {
   @include dFlex($fd: column, $ai: flex-start, $g: 10px);
   flex: 1;
@@ -73,17 +74,14 @@
   letter-spacing: 0;
   color: $color-white;
 
-  padding: 8px 32px 32px 32px;
+  padding: 8px 32px;
 }
 
+.skills-button {
+  padding: 32px 32px;
+}
 
-
-
-
-
-
-
-/* Rechte Spalte (Iconbereich) */
+//////// Rechte Spalte (Iconbereich) 
 .icons-column {
   flex: 1;
   border: 2px red solid;
