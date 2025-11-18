@@ -39,7 +39,7 @@
 
 .hero-buttons button {
   overflow: hidden;
-  transition: color 0.5s ease, border-color 0.5s ease;
+  transition: color 0.3s ease, border-color 0.5s ease;
 
   &:hover {
     border-color: $color-highlight;
@@ -50,7 +50,6 @@
   animation: buttonAnimation 3s linear infinite;
   color: $color-highlight;
 }
-
 
 @keyframes buttonAnimation {
   0% {
@@ -120,7 +119,7 @@
   > p {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    transition: color 0.5s ease;
+    transition: color 0.3s ease;
   }
 
   > p:hover {
@@ -130,16 +129,35 @@
 }
 
 .social-media-icons {
-  @include dFlex($fd: column, $g: 8px);
+  @include dFlex($fd: column, $g: 6px);
 
   > a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 32px;
     width: 32px;
+
+    &:hover .hover-point {
+      opacity: 1;
+    }
   }
 }
 
 .hover-point {
   @include dot();
+  position: absolute;
+  right: -10px;        
+  opacity: 0;
+}
+
+.github:hover img {
+  content: url("../../../../public/img/icons/gitHub-hover.svg");
+}
+
+.linkedin:hover img {
+  content: url("../../../../public/img/icons/linkedin-hover.svg");
 }
 
 .line-left {
