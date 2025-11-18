@@ -30,7 +30,17 @@
         </div>
       </div>
 
-      <div class="icons-column"></div>
+      <div class="icons-column">
+          <div class="skills-wrapper">
+            @for (skill of skills; track skill) {
+            <div class="skill-item">
+              <img src="{{ skill.src }}" alt="{{ skill.name }} Icon" />
+              <p>{{ skill.name }}</p>
+            </div>
+            }
+          </div>
+      </div>
+
     </div>
   </div>
 </section>
