@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 // import { RouterLink } from '@angular/router';
+// import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './header.scss',
 })
 export class Header {
+  // private translate = inject(TranslateService);
 
+  // useLanguage(language: string): void {
+  //   this.translate.use(language);
+  // }
 }
