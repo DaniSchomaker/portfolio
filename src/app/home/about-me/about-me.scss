@@ -46,13 +46,13 @@
 
 /* Rechte Spalte (Textbereich) */
 .info-column {
-  @include dFlex($fd: column, $g: 10px);
+  @include dFlex($fd: column, $ai: flex-start, $g: 10px);
   flex: 1;
-  align-items: flex-start;
   border: 2px red solid;
 }
 
-.label {
+.label { 
+  // doppelt in skills?
   font-size: 24px;
   font-weight: 500; 
   line-height: 1;
