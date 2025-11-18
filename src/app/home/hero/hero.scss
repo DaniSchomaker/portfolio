@@ -30,9 +30,37 @@
   margin: 16px;
 }
 
+//////// Buttons
+
 .hero-buttons {
   @include dFlex($g: 28px);
   margin-top: 40px;
+}
+
+.hero-buttons button {
+  // white-space: nowrap;
+  transition: color 0.5s ease, border-color 0.5s ease;
+  
+  &:hover {
+    color: $color-highlight;
+    border-color: $color-highlight;    
+  }
+}
+
+.hero-buttons button:hover .button-text {  
+  animation: buttonAnimation 1s linear infinite;
+}
+
+@keyframes buttonAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  // 50% {
+  //   transform: translateX(-200px);
+  // }
+  100% {
+    transform: translateX(-200px);
+  }
 }
 
 //////// Linie links mit Pfeil
@@ -83,11 +111,12 @@
   @include dFlex($fd: column, $g: 20px);
   position: absolute;
   bottom: 0px;
-  right: $p-medium; 
+  right: $p-medium;
 
   > p {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+    transition: color 0.5s ease;
   }
 
   > p:hover {
@@ -128,7 +157,7 @@
   position: absolute;
   bottom: 70px;
   height: 60px;
-  left: 0; 
+  left: 0;
   right: 0;
   background-color: rgba($color: $color-white, $alpha: 0.12);
   transform: rotate(-3deg);
