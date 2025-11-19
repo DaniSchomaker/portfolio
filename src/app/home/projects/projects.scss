@@ -1,0 +1,84 @@
+@import '../../../styles.scss';
+
+.projects {
+}
+
+.content-container {
+  //#
+  border: 2px red solid;
+  // background-color: white;
+}
+
+.projects-intro {
+  padding: $p-large 0 40px 0;
+}
+
+.label {
+  // doppelt in about-me? margin-top anders
+  font-size: 24px;
+  font-weight: 700; // hier wirklich anders als bei "Who I am"?
+  line-height: 1;
+  letter-spacing: 0;
+  color: $color-highlight;
+
+  // margin-top: 200px;
+}
+
+h2 {
+  padding: 32px 0 $p-medium 0;
+}
+
+.projects-intro-text {
+  max-width: 400px;
+
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+///// Projektliste
+
+.project-list {
+  width: 900px;
+  margin-bottom: $p-large;
+}
+
+.project-item {
+  @include dFlex($jc: space-between);
+  padding: 40px; //#
+  border-top: 1px solid $color-highlight;
+  border-bottom: 1px solid $color-highlight;
+  transition: background-color 0.3s ease;
+
+  > p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: $color-white;
+  }
+
+  &:hover {
+    background-color: $color-bg-secondary;
+  }
+
+  &:hover .hover-icon {
+    opacity: 1;
+  }
+}
+
+.project-title {
+  @include dFlex($g: 10px);
+}
+
+.hover-icon {
+  width: 12.58px;
+  height: 12.58px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.color-highlight {
+  color: $color-highlight;
+}
