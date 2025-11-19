@@ -4,7 +4,7 @@
       <div class="info-column">
         <span class="label">Technologies</span>
         <div class="info-card">
-          <h3>Skill Set</h3>
+          <h2>Skill Set</h2>
           <p class="info-card-general">
             A short introduction of your skills. Highlight your experience of using different
             front-end technologies and emphasise your openness to learning and adapting to new
@@ -18,7 +18,7 @@
           </div>
 
           <p class="info-card-endnote">
-            Feel free to contact me. I look forward to expanding on my previous knowledge.
+            Feel free to contact me. I look forward to <br> expanding on my previous knowledge.
           </p>
           <div class="skills-button">
             <a href="#contact">
@@ -32,10 +32,10 @@
 
       <div class="icons-column">
           <div class="skills-wrapper">
-            @for (skill of skills; track skill) {
+            @for (item of skills; track item) {
             <div class="skill-item">
-              <img src="{{ skill.src }}" alt="{{ skill.name }} Icon" />
-              <p>{{ skill.name }}</p>
+              <img src="{{ item.src }}" alt="{{ item.name }} Icon" />
+              <p>{{ item.name }}</p>
             </div>
             }
           </div>

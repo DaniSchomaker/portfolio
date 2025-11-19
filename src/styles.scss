@@ -1,24 +1,19 @@
 // Variablen (#später auslagern):
 // $color-highlight: #FFCA1B;
-// $color-highlight: #3DCFB6;
-$color-highlight: #e8b81c;
+$color-highlight: #3DCFB6;
+// $color-highlight: #e8b81c;
 $color-bg-dark: #1c1c1c;
 $color-white: #ffffff;
 $color-grey: #d9d9d9;
-$color-gradient-highlight: linear-gradient(90deg, #1C1C1C 23%, #FFCA1B 100%);
+$color-gradient-highlight: linear-gradient(90deg, #1c1c1c 23%, #ffca1b 100%);
 
 $p-medium: 50px;
 $p-large: 100px;
 
 $font-basic: 'Karla', sans-serif;
-$font-highlight: 'Fira Code', monospace; 
+$font-highlight: 'Fira Code', monospace;
 
 // mixins (#später auslagern):
-
-// @mixin borderStyling($bStyle) {
-//     border-radius: 12px; 
-//     border: 2px $bStyle white; 
-// }
 
 @mixin dFlex($fd: row, $jc: center, $ai: center, $g: 0px) {
   display: flex;
@@ -28,19 +23,19 @@ $font-highlight: 'Fira Code', monospace;
   gap: $g;
 }
 
-@mixin dot ($color: $color-highlight) {
+@mixin dot($color: $color-highlight) {
   height: 6.4px;
   width: 6.4px;
   border-radius: 50%;
   background-color: $color;
 }
 
-*{
-    margin: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    color: $color-white;
-    cursor: default;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color: $color-white;
+  cursor: default;
 }
 
 .content-container {
@@ -48,46 +43,47 @@ $font-highlight: 'Fira Code', monospace;
   padding: 0;
   margin: 0 auto; /* damit der Content in der Mitte des Screens angezeigt wird und nicht linksbündig  */
 
-  border: 2px red solid;
+  // border: 2px red solid;
 }
 
-html, body {
-    background-color: $color-bg-dark;
-    font-family: $font-basic;
+html,
+body {
+  background-color: $color-bg-dark;
+  font-family: $font-basic;
 }
-
-
 
 h1 {
   font-family: $font-basic;
-  font-weight: 700;         
+  font-weight: 700;
   font-size: 128px;
-  line-height: 1;           
-  letter-spacing: -0.02em;  
+  line-height: 1;
+  letter-spacing: -0.02em;
   color: $color-grey;
-  margin: 0;                // optional (Figma nutzt kein Standardmargin)
+  margin: 0; // optional (Figma nutzt kein Standardmargin)
 }
 
 h2 {
-    font-size: 64px;
-    font-weight: 700; //?
-    font-style: bold; //?
-    color: $color-highlight;
-}
-
-h3 {
   font-family: $font-highlight;
   font-size: 64px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.03em;
   color: $color-highlight;
-  padding: 32px;
+  padding: 32px; // ja?
+}
+
+h3 {
+  font-family: $font-highlight;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-white;
 }
 
 a {
-    font-size: 20px;
-    text-decoration: none;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 // Buttons
@@ -95,17 +91,17 @@ a {
 button {
   cursor: pointer;
 
-  font-family: $font-basic;   
+  font-family: $font-basic;
   font-size: 18px;
-  font-weight: 400;               
-  line-height: 1.2;                
-  letter-spacing: 0;     
-  color: $color-white;   
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-white;
 
   background-color: transparent;
 
   border: 1px solid $color-white;
-  border-radius: 999px;  
+  border-radius: 999px;
 
   padding: 12px 20px;
 }
@@ -143,31 +139,10 @@ button {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .p-lr {
   padding-left: $p-medium;
   padding-right: $p-medium;
 }
-
-
 
 /* fira-code-regular - latin */
 @font-face {
@@ -175,8 +150,9 @@ button {
   font-family: 'Fira Code';
   font-style: normal;
   font-weight: 400;
-  src: url('../public/fonts/fira-code/fira-code-v27-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-       url('../public/fonts/fira-code/fira-code-v27-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('../public/fonts/fira-code/fira-code-v27-latin-regular.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url('../public/fonts/fira-code/fira-code-v27-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
 /* fira-code-700 - latin */
@@ -185,8 +161,9 @@ button {
   font-family: 'Fira Code';
   font-style: normal;
   font-weight: 700;
-  src: url('../public/fonts/fira-code/fira-code-v27-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-       url('../public/fonts/fira-code/fira-code-v27-latin-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('../public/fonts/fira-code/fira-code-v27-latin-700.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url('../public/fonts/fira-code/fira-code-v27-latin-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
 /* karla-regular - latin */
@@ -195,8 +172,9 @@ button {
   font-family: 'Karla';
   font-style: normal;
   font-weight: 400;
-  src: url('../public/fonts/karla/karla-v33-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-       url('../public/fonts/karla/karla-v33-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('../public/fonts/karla/karla-v33-latin-regular.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url('../public/fonts/karla/karla-v33-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
 /* karla-500 - latin */
@@ -205,8 +183,9 @@ button {
   font-family: 'Karla';
   font-style: normal;
   font-weight: 500;
-  src: url('../public/fonts/karla/karla-v33-latin-500.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-       url('../public/fonts/karla/karla-v33-latin-500.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('../public/fonts/karla/karla-v33-latin-500.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url('../public/fonts/karla/karla-v33-latin-500.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
 /* karla-700 - latin */
@@ -215,9 +194,7 @@ button {
   font-family: 'Karla';
   font-style: normal;
   font-weight: 700;
-  src: url('../public/fonts/karla/karla-v33-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-       url('../public/fonts/karla/karla-v33-latin-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('../public/fonts/karla/karla-v33-latin-700.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url('../public/fonts/karla/karla-v33-latin-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
-
-
-
