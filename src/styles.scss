@@ -1,11 +1,14 @@
 // Variablen (#später auslagern):
-// $color-highlight: #FFCA1B;
-$color-highlight: #3DCFB6;
+$color-highlight: #3ccfb6;
 // $color-highlight: #e8b81c;
 $color-bg-dark: #1c1c1c;
+$color-bg-primary: #1f2e2b;
+$color-bg-secondary: #26524a; 
+
+
 $color-white: #ffffff;
 $color-grey: #d9d9d9;
-$color-gradient-highlight: linear-gradient(90deg, #1c1c1c 23%, #ffca1b 100%);
+$color-gradient-highlight: linear-gradient(90deg, #1c1c1c 23%, #ffca1b 100%); //#raus
 
 $p-medium: 50px;
 $p-large: 100px;
@@ -59,7 +62,7 @@ h1 {
   line-height: 1;
   letter-spacing: -0.02em;
   color: $color-grey;
-  margin: 0; // optional (Figma nutzt kein Standardmargin)
+  margin: 0; //#raus?
 }
 
 h2 {
@@ -69,7 +72,7 @@ h2 {
   line-height: 1;
   letter-spacing: -0.03em;
   color: $color-highlight;
-  padding: 32px; // ja?
+  padding: 32px; //#raus? / einheitlich
 }
 
 h3 {
@@ -86,7 +89,7 @@ a {
   text-decoration: none;
 }
 
-// Buttons
+// Buttons #auslagern
 
 button {
   cursor: pointer;
