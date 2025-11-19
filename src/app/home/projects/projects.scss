@@ -13,7 +13,7 @@
   padding: $p-large 0 40px 0;
 }
 
-.label {
+.subtitle {
   // doppelt in about-me? margin-top anders
   font-size: 24px;
   font-weight: 700; // hier wirklich anders als bei "Who I am"?
@@ -38,18 +38,22 @@ h2 {
 }
 
 ///// Projektliste
+.projects-overview {
+  @include dFlex($jc: flex-start);
+}
 
-.project-list {
-  width: 900px;
+.projects-list {
+  width: 900px; //##
   margin-bottom: $p-large;
 }
 
 .project-item {
   @include dFlex($jc: space-between);
-  padding: 40px; //#
+  padding: 40px;
   border-top: 1px solid $color-highlight;
   border-bottom: 1px solid $color-highlight;
   transition: background-color 0.3s ease;
+  position: relative;
 
   > p {
     font-size: 18px;
@@ -63,7 +67,11 @@ h2 {
     background-color: $color-bg-secondary;
   }
 
-  &:hover .hover-icon {
+  &:hover .hover-icon { // mit unten zusammenfassen?
+    opacity: 1;
+  }
+
+  &:hover .project-preview {
     opacity: 1;
   }
 }
@@ -82,3 +90,71 @@ h2 {
 .color-highlight {
   color: $color-highlight;
 }
+
+.project-preview {
+  position: absolute;
+//   top: 50%;
+  left: 100%;
+//   transform: translateY(-50%);
+  margin-left: 40px;
+  width: 380px;
+  height: 230px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Default-Positionen für Bild + Hintergrund */
+.project-img,
+.project-bg {
+  position: absolute;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-img {
+//   top: -10px;
+//   right: 20px;
+  z-index: 2;
+}
+
+.project-bg {
+//   top: 10px;
+//   right: 0;
+  z-index: 1;
+}
+
+/* Pokédex – eigene Positionen */
+.pokedex .project-img {
+  top: 40px;
+  right: 20px;
+//   z-index: 2;
+}
+
+.pokedex .project-bg {
+  top: 60px;
+  right: 0px;
+//   z-index: 1;
+}
+
+.elpolloloco .project-img {
+  top: 20px;
+  right: 20px;
+}
+
+.elpolloloco .project-bg {
+  top: 40px;
+  right: 0px;
+}
+
+.join .project-img {
+  top: 0px;
+  right: 20px;
+}
+
+.join .project-bg {
+  top: 20px;
+  right: 0px;
+}
+
