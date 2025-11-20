@@ -38,9 +38,8 @@ h2 {
 
 .project-item {
   @include dFlex($jc: space-between);
+  @include item-divider();
   padding: 40px;
-  border-top: 1px solid $color-highlight;
-  border-bottom: 1px solid $color-highlight;
   transition: background-color 0.3s ease;
   position: relative;
 

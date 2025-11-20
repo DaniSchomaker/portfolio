@@ -33,6 +33,14 @@ $font-highlight: 'Fira Code', monospace;
   background-color: $color;
 }
 
+@mixin item-divider {
+  border-top: 1px solid $color-highlight;
+
+  &:last-child {
+    border-bottom: 1px solid $color-highlight;
+  }
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -96,7 +104,6 @@ a {
   letter-spacing: 0;
   color: $color-highlight;
 }
-
 
 // Buttons #auslagern
 
