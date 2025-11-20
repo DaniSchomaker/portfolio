@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
-.projects {
-}
+// .projects {
+// }
 
 .content-container {
   //#
@@ -11,17 +11,6 @@
 
 .projects-intro {
   padding: $p-large 0 40px 0;
-}
-
-.subtitle {
-  // doppelt in about-me? margin-top anders
-  font-size: 24px;
-  font-weight: 700; // hier wirklich anders als bei "Who I am"?
-  line-height: 1;
-  letter-spacing: 0;
-  color: $color-highlight;
-
-  // margin-top: 200px;
 }
 
 h2 {

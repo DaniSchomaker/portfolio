@@ -9,6 +9,7 @@
 .layout {
   @include dFlex($ai:flex-start, $g: $p-medium);
   margin: $p-large 0;
+  // margin: 150px 0 $p-large 0;
   // padding: $p-medium;
   
 //   background-color: white;
@@ -49,17 +50,6 @@
   @include dFlex($fd: column, $ai: flex-start, $g: 10px);
   flex: 1;
   // border: 2px red solid;
-}
-
-.subtitle { 
-  // doppelt in skills?
-  font-size: 24px;
-  font-weight: 500; 
-  line-height: 1;
-  letter-spacing: 0;
-  color: $color-highlight;
-
-  margin-top: 200px;
 }
 
 .info-card {

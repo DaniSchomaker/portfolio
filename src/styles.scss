@@ -89,6 +89,15 @@ a {
   text-decoration: none;
 }
 
+.subtitle { 
+  font-size: 24px;
+  font-weight: 500; 
+  line-height: 1;
+  letter-spacing: 0;
+  color: $color-highlight;
+}
+
+
 // Buttons #auslagern
 
 button {
