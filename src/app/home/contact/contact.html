@@ -1,3 +1,88 @@
-<div class="content-container">
-  <p>contact works!</p>
-</div>
+<section class="contact">
+  <div class="content-container p-lr">
+    <div class="layout">
+      <div class="info-column">
+        <span class="subtitle">Contact me</span>
+        <h2>Let's work together</h2>
+
+        <h3>Got a problem to solve?</h3>
+        <!-- h3? -->
+
+        <p>
+          Encourage People to contact you and describe what role you are interested in. <br />
+          Show that you will add value to their Projects through your work.
+        </p>
+        <p>
+          Need a Frontend developer?
+          <span class="span">Let's talk!</span>
+        </p>
+      </div>
+
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
+        <div>
+          <div class="contact-item">
+            <label for="name" class="contact-question">What's your name?</label>
+            <input
+              [(ngModel)]="contactData.name"
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Your name goes here"
+              class="input-text"
+              required
+            />
+          </div>
+          <div class="contact-item">
+            <label for="email" class="contact-question">What's your email?</label>
+            <input
+              [(ngModel)]="contactData.email"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="youremail@email.com"
+              class="input-text"
+              required
+              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            />
+          </div>
+          <div class="contact-item">
+            <label for="message" class="contact-question">How can I help you?</label>
+            <input
+              [(ngModel)]="contactData.message"
+              #message="ngModel"
+              minlength="3"
+              id="message"
+              name="message"
+              type="text"
+              placeholder="Hello Dani, I am interested in..."
+              class="input-text"
+              required
+            />
+            @if (!message.valid && message.touched) {
+              <span>Please enter a message</span>
+            }
+          </div>
+        </div>
+
+        <label class="consent-label">
+          <input type="checkbox" class="consent-checkbox" />
+          <span class="custom-checkbox">
+            <img src="img/icons/contact-check.png" alt="checkbox" class="check" />
+            <img src="img/icons/contact-check-hover.svg" alt="" class="hover-circle" />
+          </span>
+          <p>
+            I've read the
+            <a href="" target="_blank" class="link-highlight"
+              >privacy policy<span class="hover-line"></span
+            ></a>
+            and agree to the processing of my data as outlined.
+          </p>
+        </label>
+
+        <button class="contact-submit-button button-animated">
+          <span class="button-text">Say Hello ;)</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
