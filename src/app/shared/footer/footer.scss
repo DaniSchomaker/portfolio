@@ -3,3 +3,98 @@
 // footer {
 //     padding: 0 $p-medium;
 // }
+
+p, a {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-white;
+
+//   padding: 4px 0;
+}
+
+.content-container {
+  border: 2px red solid;
+}
+
+.footer-content {
+  @include dFlex($jc: space-between);
+  margin: $p-medium 0;
+
+  border: 2px green solid;
+}
+
+// LINKE SEITE
+
+.footer-brand {
+    @include dFlex($fd: column, $ai: space-between, $g: 28px);
+//   height: 150px; //#
+//   width: 300px; //#
+  border: 2px pink solid;
+}
+
+.logo {
+  //doppelt header
+  width: 133px;
+  height: 48px;
+  background-image: url('../../../../public/img/hero/Logo-filled.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: background-image 0.1s ease;
+
+//   margin-bottom: 24px;
+}
+
+.logo:hover {
+  // doppelt header
+  background-image: url('../../../../public/img/hero/Logo-outlines.svg');
+}
+
+// MITTE
+
+.footer-copyright {
+  @include dFlex();
+
+  border: 2px pink solid;
+}
+
+span {
+  font-family: $font-highlight;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-highlight;
+}
+
+// RECHTS
+
+.footer-links {
+    @include dFlex($fd: column, $ai: flex-start);
+
+  border: 2px pink solid;
+}
+
+nav a { //#doppelt 
+  position: relative;
+  transition: color 0.5s ease;
+
+  &:hover {
+    color: $color-highlight;
+  }
+}
+
+nav a .hover-point { //#doppelt 
+  @include dot();
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+nav a:hover .hover-point { //#doppelt 
+  opacity: 1;
+}
