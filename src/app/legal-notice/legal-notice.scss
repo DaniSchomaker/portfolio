@@ -1,0 +1,68 @@
+@import '../../styles.scss';
+
+h1 {
+  font-family: $font-highlight;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-highlight;
+  text-align: center;
+  padding: 140px 0 0 0;
+}
+
+h2 {
+  font-family: $font-basic;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-white;
+  margin: 0; //#raus?
+  padding: 24px 0 0 0;
+
+}
+
+a, p {
+  font-family: $font-basic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-highlight;
+}
+
+a {
+    cursor: pointer;
+}
+
+span {
+    color: $color-white;
+}
+
+.adress {
+  padding-top: 16px;
+}
+
+li {
+  font-family: $font-basic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-highlight;
+}
+
+// .legal-notice {
+//   background-image: url('../../../public/img/Hero_Background.png');
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: 50% 50%;
+//   padding-top: 140px;
+//   min-height: 100vh; 
+// }
+
+.legal-content {
+  margin: 32px $p-large;
+}
+
