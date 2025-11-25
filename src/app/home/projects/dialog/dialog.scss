@@ -65,6 +65,7 @@ p {
 
 .project-tech {
   @include dFlex($jc: flex-start, $g: 24px);
+  flex-wrap: wrap;
 }
 
 .tech-item {
@@ -100,8 +101,8 @@ p {
   @include dFlex();
 }
 
-
 .close-btn {
+  //# einheitlich button statt btn
   position: absolute;
   top: 40px;
   right: 40px;
@@ -113,3 +114,41 @@ p {
 .close-btn:hover img {
   content: url('../../../../../public/img/icons/dialog-close-button-hover.svg');
 } //# Achtung: noch "harter" Übergang. Content kennt keine transition. ggf. mit opacity arbeiten?
+
+.next-project-button {
+  @include dFlex($g: 6px);
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: $color-highlight;
+  transition: color 0.3s ease;
+
+  > img {
+    transition: transform 1s ease;
+  }
+
+  &:hover {
+    color: $color-white;
+  }
+
+  &:hover img {
+    content: url('../../../../../public/img/icons/dialog-arrow-forward-bold.svg');
+    transform: translate(4px, 0px);
+  }
+
+  &:active {
+    color: $color-highlight;
+  }
+
+  &:active img {
+    content: url('../../../../../public/img/icons/dialog-arrow-forward-light.svg');
+    transform: translate(0, 0);
+  }
+}
+
+// mit keyframes arbeiten?
+// Ausgangspunkt alles grün: hover: weiße Schrift + Pfeil nach rechts
+// klick: Schrift kurz grün + Pfeil wieder Ausgangsposition
