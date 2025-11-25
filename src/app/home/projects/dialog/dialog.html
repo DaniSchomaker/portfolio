@@ -43,12 +43,18 @@
         <img [src]="project.image" alt="Project preview" />
       </div>
 
-      <div class="dialog-footer">
-        <button class="next-project-btn" type="button" (click)="onNextClick($event)">
-          Next project
-          <span class="next-arrow">→</span>
-        </button>
-      </div>
+      <!-- <div class="dialog-footer"> -->
+
+      <!-- <button class="close-btn" (click)="close.emit()">
+      <img src="img/icons/dialog-close-button.svg" alt="close button" />
+    </button> -->
+
+      <!-- </div> -->
     </div>
+
+    <button class="next-project-button" type="button" (click)="onNextClick($event)">
+      Next project
+       <img src="img/icons/dialog-arrow-forward-light.svg" alt="next project button">
+    </button>
   </div>
 </div>
