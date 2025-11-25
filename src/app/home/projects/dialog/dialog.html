@@ -1,5 +1,54 @@
-<p>dialog works!</p>
+<div class="dialog-overlay" (click)="onOverlayClick()">
+  <div class="dialog-card" (click)="onDialogClick($event)">
+    <button class="close-btn" (click)="close.emit()">
+      <img src="img/icons/dialog-close-button.svg" alt="close button" />
+    </button>
 
-<dialog>
-    
-</dialog>
+    <div class="dialog-content">
+      <div class="info-column">
+        <h1>{{ project.id }}</h1>
+        <h2>{{ project.title }}</h2>
+        <h3>What is this project about?</h3>
+        <p>{{ project.shortDescription }}</p>
+
+        <div class="project-tech">
+          @for (item of project.tech; track $index) {
+          <div class="tech-item">
+            <img [src]="item.icon" [alt]="item.name" />
+            <span>{{ item.name }}</span>
+          </div>
+          }
+        </div>
+
+        <div class="project-links">
+          <a [href]="project.github" target="_blank">
+            <button class="dialog-button">
+              <span class="button-text"
+                >GitHub
+                <img src="img/icons/dialog-arrow-forward-light.svg" alt="" />
+              </span></button
+          ></a>
+
+          <a [href]="project.live" target="_blank">
+            <button class="dialog-button">
+              <span class="button-text"
+                >Live Test
+                <img src="img/icons/dialog-arrow-forward-light.svg" alt="" />
+              </span></button
+          ></a>
+        </div>
+      </div>
+
+      <div class="image-column">
+        <img [src]="project.image" alt="Project preview" />
+      </div>
+
+      <div class="dialog-footer">
+        <button class="next-project-btn" type="button" (click)="onNextClick($event)">
+          Next project
+          <span class="next-arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
