@@ -1,0 +1,115 @@
+@import '../../../../styles.scss';
+
+h1 {
+  color: $color-highlight;
+  padding: 40px 0 20px 0;
+}
+
+h2 {
+  line-height: 0.8;
+  color: $color-white;
+  padding: 0 0 20px 0;
+}
+
+h3 {
+  color: $color-highlight;
+  padding: 20px 0;
+}
+
+p {
+  // #auslagern?
+  font-family: $font-basic;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-white;
+  padding-bottom: 24px;
+}
+
+.dialog-overlay {
+  @include dFlex();
+  position: fixed;
+  inset: 0; // deckt den ganzen Bildschirm ab
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 2000;
+}
+
+.dialog-card {
+  position: relative;
+  background-image: url('../../../../../public/img/Hero_Background.png'); //#als mixin?
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: 1px $color-highlight solid;
+  border-radius: 30px;
+  max-width: 1224px;
+  width: 85%;
+  padding: $p-medium;
+}
+
+.dialog-content {
+  @include dFlex($jc: space-between, $g: 40px);
+  border: 2px red solid;
+}
+
+.info-column {
+  width: 50%;
+  border: 2px pink solid;
+}
+
+.image-column {
+  width: 50%;
+  border: 2px pink solid;
+}
+
+.project-tech {
+  @include dFlex($jc: flex-start, $g: 24px);
+}
+
+.tech-item {
+  @include dFlex($g: 6px);
+}
+
+.project-links {
+  @include dFlex($jc: flex-start, $g: 30px);
+  margin: 40px 0;
+}
+
+.dialog-button {
+  &:hover {
+    border-color: $color-highlight;
+  }
+
+  &:hover .button-text {
+    color: $color-highlight;
+  }
+
+  .button-text img {
+    height: 20px;
+    transform: translate(0, 0) rotate(-45deg);
+    transition: transform 0.2s ease;
+  }
+
+  &:hover .button-text img {
+    transform: translate(4px, -4px) rotate(-45deg);
+  }
+}
+
+.button-text {
+  @include dFlex();
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.close-btn:hover img {
+  content: url('../../../../../public/img/icons/dialog-close-button-hover.svg');
+} //# Achtung: noch "harter" Übergang. Content kennt keine transition. ggf. mit opacity arbeiten?
