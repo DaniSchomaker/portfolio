@@ -58,4 +58,61 @@ nav a:hover .hover-point {
   background-image: url('../../../../public/img/hero/Logo-outlines.svg');
 }
 
+// EN/DE (später nach oben)
 
+.language-toggle {
+  @include dFlex($jc: space-between);
+  position: relative;
+  width: 84px;
+  height: 28px;
+  border: 1px solid $color-highlight;
+  border-radius: 999px;
+
+  &:hover {
+    border-color: $color-white;
+  }
+}
+
+.language-button {
+  flex: 1;
+  height: 100%;
+  background: none;
+  border: none;
+  font-family: $font-highlight;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba($color: $color-highlight, $alpha: 0.5);
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.25s ease;
+  padding: 0;
+
+  &:hover {
+    color: $color-highlight;
+  }
+
+  &.active {
+    color: $color-white;
+    font-weight: 700;
+  }
+}
+
+.language-slider {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  background: $color-highlight;
+  width: 44px;
+  height: 28px;
+  border-radius: 999px;
+  z-index: 1;
+  transition: transform 0.25s ease;
+}
+
+:host-context(.language-en) .language-slider {
+  transform: translateX(0);
+}
+
+:host-context(.language-de) .language-slider {
+  transform: translateX(40px);
+}

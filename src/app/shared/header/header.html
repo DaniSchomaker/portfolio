@@ -1,9 +1,27 @@
 <header>
   <div class="content-container p-lr">
     <nav>
-      <p>XXEN/DEXX</p>
       <!-- <button (click)="useLanguage('en')">en</button>
       <button (click)="useLanguage('de')">de</button> -->
+
+      <div class="language-toggle">
+        <button 
+          class="language-button"
+          [class.active]="currentLanguage === 'en'" 
+          (click)="useLanguage('en')">
+          EN
+        </button>
+
+        <button 
+          class="language-button"
+          [class.active]="currentLanguage === 'de'" 
+          (click)="useLanguage('de')">
+          DE
+        </button>
+
+        <div class="language-slider"></div>
+      </div>
+
       <a href="#about-me">
         About me
         <span class="hover-point"></span>
