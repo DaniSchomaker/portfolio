@@ -1,9 +1,16 @@
 {
-    "hero": {
-        "jobtitle": "Frontend Entwicklerin"
-    },
+  "header": {
+    "navigation-about-me": "Über mich",
+    "navigation-projects": "Projekte"
+  },
 
-    "aboutMe": {
-        "title": "Über mich"
-    }
+  "hero": {
+    "jobtitle": "Frontend Entwicklerin",
+    "projects-button": "Zu meinen Projekten",
+    "contact-button": "Schreib mir"
+  },
+
+  "aboutMe": {
+    "title": "Über mich"
+  }
 }
