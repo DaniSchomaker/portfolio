@@ -45,22 +45,28 @@ p {
   border-radius: 30px;
   max-width: 1224px;
   width: 85%;
+  // height: 85%;
   padding: $p-medium;
 }
 
 .dialog-content {
-  @include dFlex($jc: space-between, $g: 40px);
-  border: 2px red solid;
+  @include dFlex($jc: space-between, $g: 24px);
+  // border: 2px red solid;
 }
 
 .info-column {
   width: 50%;
-  border: 2px pink solid;
+  min-height: 540px;
+  // border: 2px pink solid;
 }
 
 .image-column {
-  width: 50%;
-  border: 2px pink solid;
+  // width: 50%;
+  // border: 2px pink solid;
+}
+
+.image-column img {
+  width: 600px;
 }
 
 .project-tech {
@@ -74,7 +80,7 @@ p {
 
 .project-links {
   @include dFlex($jc: flex-start, $g: 30px);
-  margin: 40px 0;
+  margin: 40px 0 0 0;
 }
 
 .dialog-button {

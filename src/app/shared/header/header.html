@@ -1,9 +1,6 @@
 <header>
   <div class="content-container p-lr">
     <nav>
-      <!-- <button (click)="useLanguage('en')">en</button>
-      <button (click)="useLanguage('de')">de</button> -->
-
       <div class="language-toggle">
         <button 
           class="language-button"
@@ -11,19 +8,17 @@
           (click)="useLanguage('en')">
           EN
         </button>
-
         <button 
           class="language-button"
           [class.active]="currentLanguage === 'de'" 
           (click)="useLanguage('de')">
           DE
         </button>
-
         <div class="language-slider"></div>
       </div>
 
       <a href="#about-me">
-        About me
+        {{ 'header.navigation-about-me' | translate }}
         <span class="hover-point"></span>
       </a>
       <a href="#skills">
@@ -31,7 +26,7 @@
         <span class="hover-point"></span>
       </a>
       <a href="#projects">
-        Projects
+        {{ 'header.navigation-projects' | translate }}
         <span class="hover-point"></span>
       </a>
     </nav>

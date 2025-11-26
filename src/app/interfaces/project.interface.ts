@@ -1,13 +1,3 @@
-// export interface Project {
-//   id: string;
-//   title: string;
-//   tech: string[];
-//   shortDescription: string;
-//   image: string;
-//   github: string;
-//   live: string;
-// }
-
 export interface ProjectTech {
   icon: string;
   name: string;
@@ -47,7 +37,7 @@ export const PROJECTS: Project[] = [
       { icon: 'img/icons/dialog-css.svg', name: 'CSS' }      
     ],
     shortDescription: 'Jump & run game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
-    image: 'img/projects/pollo.png',
+    image: 'img/projects/el-pollo-loco.png',
     github: 'https://github.com/DaniSchomaker/El_Pollo_Loco',
     live: '',
   },

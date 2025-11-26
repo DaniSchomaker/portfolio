@@ -12,7 +12,8 @@
         <p>{{ project.shortDescription }}</p>
 
         <div class="project-tech">
-          @for (item of project.tech; track $index) {
+          @for (item of project.tech; track $index) { 
+            <!-- brauche ich das track index? -->
           <div class="tech-item">
             <img [src]="item.icon" [alt]="item.name" />
             <span>{{ item.name }}</span>
@@ -43,13 +44,6 @@
         <img [src]="project.image" alt="Project preview" />
       </div>
 
-      <!-- <div class="dialog-footer"> -->
-
-      <!-- <button class="close-btn" (click)="close.emit()">
-      <img src="img/icons/dialog-close-button.svg" alt="close button" />
-    </button> -->
-
-      <!-- </div> -->
     </div>
 
     <button class="next-project-button" type="button" (click)="onNextClick($event)">
