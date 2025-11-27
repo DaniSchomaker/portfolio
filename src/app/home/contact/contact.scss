@@ -163,3 +163,11 @@ h3 {
 .content-container {
   // border: 2px red solid;
 }
+
+.input-text:-webkit-autofill,
+.input-text:-webkit-autofill:hover,
+.input-text:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px $color-bg-dark inset; 
+  box-shadow: 0 0 0 1000px $color-bg-dark inset;
+  -webkit-text-fill-color: $color-white;              // Textfarbe anpassen
+}
