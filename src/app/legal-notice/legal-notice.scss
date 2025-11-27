@@ -1,4 +1,4 @@
-@use '../../../styles' as *;
+@use '../../styles.scss' as *;
 
 h1 {
   font-family: $font-highlight;
@@ -53,16 +53,19 @@ li {
   color: $color-highlight;
 }
 
-// .legal-notice {
-//   background-image: url('../../../public/img/Hero_Background.png');
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   background-position: 50% 50%;
-//   padding-top: 140px;
-//   min-height: 100vh; 
-// }
-
 .legal-content {
   margin: 32px $p-large;
+}
+
+.legal-wrapper-de {
+  display: none;
+}
+
+:host-context(.language-de) .legal-wrapper-en {
+  display: none;
+}
+
+:host-context(.language-de) .legal-wrapper-de {
+  display: block;
 }
 
