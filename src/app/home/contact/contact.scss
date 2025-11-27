@@ -1,10 +1,5 @@
 @use '../../../styles' as *;
 
-
-// .contact {
-
-// }
-
 .layout {
   @include dFlex($jc: space-between, $ai: flex-start, $g: $p-medium);
   padding: $p-large 0; // #oder margin/padding? einheitlich
@@ -21,7 +16,6 @@ h3 {
 .info-column {
   flex: 1;
   max-width: 50%;
-  //   border: 2px red solid; //#raus
 
   > p {
     padding: 16px 0;
@@ -36,87 +30,69 @@ h3 {
 }
 
 .contact-form {
+  position: relative;
   flex: 1;
   max-width: 50%;
 }
 
 ////// Input-Felder
 
+.contact-item {
+  @include item-divider();
+  padding: 32px;
+  border-top-color: rgba($color-highlight, 0.5);
+  transition: border-color 0.3s ease;
 
-  .contact-item {
-    @include item-divider();
-    padding: 32px;
-    transition: border-color 0.3s ease;
+  &:last-child {
+    border-bottom-color: rgba($color-highlight, 0.5);
+  }
 
-    /* Grundfarbe der Linien */
-    border-top-color: rgba($color-highlight, 0.5);
+  &:hover {
+    border-top-color: $color-highlight;
 
-    &:last-child {
-      border-bottom-color: rgba($color-highlight, 0.5);
-    }
-
-    /* Hover: eigenes Item */
-    &:hover {
-      border-top-color: $color-highlight;
-
-      .input-text:not(.input-error)::placeholder {
-        color: $color-white;
-      }
-    }
-
-    /* Hover: obere Linie des nächsten Items = „untere Linie“ der aktuellen Zeile */
-    &:hover + .contact-item {
-      border-top-color: $color-highlight;
-    }
-
-    /* Letzte Zeile: untere Linie beim Hover mitfärben */
-    &:last-child:hover {
-      border-bottom-color: $color-highlight;
+    .input-text:not(.input-error)::placeholder {
+      color: $color-white;
     }
   }
 
-  .input-text {
-    width: 100%;
-    background-color: transparent;
-    border: none;
-    margin-top: 16px;
-
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: 0;
-    color: rgba($color-white, 0.8);
-
-    &:hover {
-      cursor: text;
-    }
-
-    &:focus {
-      outline: none;
-    }
-
-    &::placeholder {
-      color: rgba($color-white, 0.4);
-      transition: color 0.3s ease;
-    }
-
-    &.input-error::placeholder {
-      color: rgba($color-error, 0.8);
-    }
+  &:hover + .contact-item {
+    border-top-color: $color-highlight;
   }
 
+  &:last-child:hover {
+    border-bottom-color: $color-highlight;
+  }
+}
 
+.input-text {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  margin-top: 16px;
 
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: rgba($color-white, 0.8);
 
+  &:hover {
+    cursor: text;
+  }
 
+  &:focus {
+    outline: none;
+  }
 
+  &::placeholder {
+    color: rgba($color-white, 0.4);
+    transition: color 0.3s ease;
+  }
 
-
-
-
-
-
-
+  &.input-error::placeholder {
+    color: rgba($color-error, 0.8);
+  }
+}
 
 .contact-question {
   font-family: $font-highlight;
@@ -127,98 +103,7 @@ h3 {
   color: $color-highlight;
 }
 
-// .input-text {
-//   width: 100%;
-//   background-color: transparent;
-//   border: none;
-
-//   font-size: 18px;
-//   font-weight: 400;
-//   line-height: 1.2;
-//   letter-spacing: 0;
-//   color: rgba($color: $color-white, $alpha: 0.8); 
-
-//   margin-top: 16px;
-
-//   &:hover {
-//     cursor: text;
-//   }
-
-//   &:focus {
-//     outline: none;
-//   }
-
-//   &.input-error {
-//     &::placeholder {
-//       color: rgba($color: $color-error, $alpha: 0.8);  // roter Hinweistext
-//       opacity: 1;
-//     }
-//   }
-// }
-
-// .input-text::placeholder {
-//   // color: rgba($color-white, 0.8);
-//   transition: color 0.3s ease;
-// }
-
-// .input-text.input-error::placeholder {
-//   color: rgba($color-error, 0.8);
-// }
-
-// .contact-item:hover .input-text:not(.input-error)::placeholder {
-//   color: $color-white; // heller
-// }
-
-// .contact-item {
-//   @include item-divider();
-//   padding: 32px;
-//   border-color: rgba($color-highlight, 0.5);
-//   transition: border-color 0.3s ease;
-
-//   &:hover {
-//     border-color: $color-highlight;
-
-//     .input-text:not(.input-error)::placeholder {
-//       color: $color-white;
-//     }
-//   }
-// }
-
-// .input-text {
-//   width: 100%;
-//   background-color: transparent;
-//   border: none;
-//   margin-top: 16px;
-
-//   font-size: 18px;
-//   font-weight: 400;
-//   line-height: 1.2;
-//   letter-spacing: 0;
-//   color: rgba($color-white, 0.8);
-
-//   &:hover {
-//     cursor: text;
-//   }
-
-//   &:focus {
-//     outline: none;
-//   }
-
-//   &::placeholder {
-//     color: rgba($color-white, 0.4);
-//     transition: color 0.3s ease;
-//   }
-
-//   &.input-error {
-//     &::placeholder {
-//       color: rgba($color-error, 0.8);
-//     }
-//   }
-// }
-
-
-
-////// Coonsent / Checkbox
+////// Consent / Checkbox
 
 .consent-label {
   @include dFlex($jc: flex-start, $ai: center, $g: 12px);
@@ -226,7 +111,7 @@ h3 {
   font-size: 16px;
   line-height: 1.2;
   color: $color-white;
-  margin-top: 32px;
+  margin: 32px 0 8px 0;
 }
 
 .consent-checkbox {
@@ -242,7 +127,6 @@ h3 {
   height: 18px;
   border-radius: 2px;
   border: 2px solid $color-highlight;
-  // cursor: pointer; 
 
   &:hover .hover-circle {
     opacity: 1;
@@ -264,7 +148,7 @@ h3 {
   height: 24px;
   opacity: 0;
   transition: opacity 0.2s ease;
-   cursor: pointer;
+  cursor: pointer;
 }
 
 .consent-checkbox:checked + .custom-checkbox .check {
@@ -304,10 +188,26 @@ h3 {
 .contact-submit-button {
   display: block;
   margin: $p-medium auto 0;
+
+  transition: opacity 0.3s ease;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }
 
-.content-container {
-  // border: 2px red solid;
+.error-message {
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  font-family: $font-basic;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-error;
 }
 
 .input-text:-webkit-autofill,
@@ -315,5 +215,5 @@ h3 {
 .input-text:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 1000px $color-bg-dark inset;
   box-shadow: 0 0 0 1000px $color-bg-dark inset;
-  -webkit-text-fill-color: $color-white; // Textfarbe anpassen
+  -webkit-text-fill-color: $color-white;
 }
