@@ -35,6 +35,7 @@
 .hero-buttons {
   @include dFlex($g: 28px);
   margin-top: 40px;
+  cursor: pointer;
 }
 
 //////// Linie links mit Pfeil
