@@ -4,9 +4,7 @@
       <div class="info-column">
         <span class="subtitle">Contact me</span>
         <h2>Let's work together</h2>
-
         <h3>Got a problem to solve?</h3>
-        <!-- h3? -->
 
         <p>
           Encourage People to contact you and describe what role you are interested in. <br />
@@ -27,7 +25,13 @@
               id="name"
               name="name"
               type="text"
-              placeholder="Your name goes here"
+              #name="ngModel"
+              [placeholder]="
+                !name.valid && name.touched
+                  ? 'Oooops! It seems your name is missing'
+                  : 'Your name goes here'
+              "
+              [class.input-error]="!name.valid && name.touched"
               class="input-text"
               required
             />
@@ -36,13 +40,19 @@
             <label for="email" class="contact-question">What's your email?</label>
             <input
               [(ngModel)]="contactData.email"
+              #email="ngModel"
               id="email"
               name="email"
               type="email"
-              placeholder="youremail@email.com"
               class="input-text"
               required
-              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+              email
+              [placeholder]="
+                !email.valid && email.touched
+                  ? 'Hoppla! Your email is required'
+                  : 'youremail@email.com'
+              "
+              [class.input-error]="!email.valid && email.touched"
             />
           </div>
           <div class="contact-item">
@@ -54,32 +64,47 @@
               id="message"
               name="message"
               type="text"
-              placeholder="Hello Dani, I am interested in..."
+              [placeholder]="
+                !message.valid && message.touched
+                  ? 'Please enter a message'
+                  : 'Hello Dani, I am interested in...'
+              "
+              [class.input-error]="!message.valid && message.touched"
               class="input-text"
               required
             />
-            @if (!message.valid && message.touched) {
-              <span>Please enter a message</span>
-            }
           </div>
         </div>
 
         <label class="consent-label">
-          <input type="checkbox" class="consent-checkbox" />
+          <input
+            type="checkbox"
+            name="consent"
+            ngModel
+            #consent="ngModel"
+            required
+            class="consent-checkbox"
+            [class.checkbox-error]="consent.invalid && consent.touched"
+          />
+
           <span class="custom-checkbox">
             <img src="img/icons/contact-check.png" alt="checkbox" class="check" />
             <img src="img/icons/contact-check-hover.svg" alt="" class="hover-circle" />
           </span>
+
           <p>
             I've read the
-            <a href="" target="_blank" class="link-highlight"
-              >privacy policy<span class="hover-line"></span
-            ></a>
+            <a href="" target="_blank" class="link-highlight">
+              privacy policy<span class="hover-line"></span>
+            </a>
             and agree to the processing of my data as outlined.
           </p>
         </label>
+        @if (consent.invalid && consent.touched) {
+        <span class="error-message">Please accept the privacy policy</span>
+        }
 
-        <button class="contact-submit-button button-animated">
+        <button class="contact-submit-button button-animated" [disabled]="!consent.valid">
           <span class="button-text">Say Hello ;)</span>
         </button>
       </form>
