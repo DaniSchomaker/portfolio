@@ -1,13 +1,14 @@
 {
   "header": {
     "navigation-about-me": "Über mich",
+    "navigation-skills": "Fähigkeiten",
     "navigation-projects": "Projekte"
   },
 
   "hero": {
     "jobtitle": "Frontend Entwicklerin",
     "projects-button": "Zu meinen Projekten",
-    "contact-button": "Schreib mir"
+    "contact-button": "Kontakt aufnehmen"
   },
 
   "aboutMe": {
