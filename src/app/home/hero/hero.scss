@@ -1,4 +1,4 @@
-@import '../../../styles.scss';
+@use '../../../styles' as *;
 
 .hero {
   @include dFlex($fd: column);
@@ -155,6 +155,15 @@
   background-color: rgba($color: $color-white, $alpha: 0.12);
   transform: rotate(-3deg);
   overflow: hidden;
+
+  // &::before {
+  //   left: 0;
+  //   background: linear-gradient(to right, rgba(20,20,20,0.7) 0%, rgba(20,20,20,0) 100%);
+  // }
+  // &::after {
+  //   right: 0;
+  //   background: linear-gradient(to left, rgba(20,20,20,0.7) 0%, rgba(20,20,20,0) 100%);
+  // }
 }
 
 .banner-wrapper {
