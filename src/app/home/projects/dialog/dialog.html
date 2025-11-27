@@ -12,8 +12,7 @@
         <p>{{ project.shortDescription }}</p>
 
         <div class="project-tech">
-          @for (item of project.tech; track $index) { 
-            <!-- brauche ich das track index? -->
+          @for (item of project.tech; track item) { 
           <div class="tech-item">
             <img [src]="item.icon" [alt]="item.name" />
             <span>{{ item.name }}</span>
