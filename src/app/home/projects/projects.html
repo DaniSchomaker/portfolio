@@ -65,70 +65,12 @@
       </div>
     </div>
 
-    <!-- <ng-container *ngIf="selectedProject as project">
-      <app-dialog [project]="project" (close)="closeDialog()"> </app-dialog>
-    </ng-container> -->
-
-    <!-- <ng-container *ngIf="selectedProject as project">
-      <app-dialog [project]="project" (close)="closeDialog()" (next)="goToNextProject()">
-      </app-dialog>
-    </ng-container> -->
-
-@if (selectedProject) {
-  <app-dialog
-    [project]="selectedProject"
-    (close)="closeDialog()"
-    (next)="goToNextProject()"
-  ></app-dialog>
-}
-
+    @if (selectedProject) {
+    <app-dialog
+      [project]="selectedProject"
+      (close)="closeDialog()"
+      (next)="goToNextProject()"
+    ></app-dialog>
+    }
   </div>
 </section>
-
-<!-- <section class="projects">
-  <div class="content-container p-lr">
-    <div class="projects-intro">
-      <span class="subtitle">Portfolio</span>
-      <h2>Featured Projects</h2>
-      <p class="projects-intro-text">
-        Explore a selection of my work here - Interact with projects to see my skills in action.
-      </p>
-    </div>
-
-    <div class="projects-overview">
-      <div class="projects-list">
-
-        <div 
-          class="project-item"
-          *ngFor="let p of projects"
-          (click)="openDialog(p)"
-        >
-
-          <div class="project-title">
-            <h3>{{ p.title }}</h3>
-            <img src="img/icons/projects-arrow.svg" alt="arrow icon" class="hover-icon" />
-          </div>
-
-          <p class="project-tech">
-            {{ p.tech.join(' | ') }}
-          </p>
-
-
-          <div class="project-preview">
-            <img class="project-img" [src]="p.image" [alt]="p.title + ' preview'" />
-            <img class="project-bg" src="img/projects/projects-bg-small.png" alt="" />
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-    <app-dialog 
-      *ngIf="selectedProject"
-      [project]="selectedProject"
-      (close)="closeDialog()">
-    </app-dialog>
-
-  </div>
-</section> -->
