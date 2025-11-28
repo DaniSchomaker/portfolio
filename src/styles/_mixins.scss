@@ -1,0 +1,24 @@
+@use 'variables' as *;
+
+@mixin dFlex($fd: row, $jc: center, $ai: center, $g: 0px) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+@mixin dot($color: $color-highlight) {
+  height: 6.4px;
+  width: 6.4px;
+  border-radius: 50%;
+  background-color: $color;
+}
+
+@mixin item-divider {
+  border-top: 1px solid $color-highlight;
+
+  &:last-child {
+    border-bottom: 1px solid $color-highlight;
+  }
+}

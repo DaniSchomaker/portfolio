@@ -1,4 +1,7 @@
 @use '../../../styles' as *;
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
 
 .layout {
   @include dFlex($jc: space-between, $ai: flex-start, $g: $p-medium);

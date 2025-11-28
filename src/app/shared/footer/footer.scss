@@ -1,4 +1,6 @@
 @use '../../../styles' as *;
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
 
 p,
 a {
@@ -9,18 +11,13 @@ a {
   color: $color-white;
 }
 
-.content-container {
-  // border: 2px red solid;
-}
-
 .footer-content {
   @include dFlex($jc: space-between, $ai: flex-end);
   position: relative;
-  margin: $p-medium 0;
+  padding: $p-medium 0;
 }
 
 // LINKE SEITE
-
 .footer-brand {
   @include dFlex($fd: column, $ai: space-between, $g: 28px);
 }

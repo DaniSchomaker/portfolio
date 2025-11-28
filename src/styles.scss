@@ -1,46 +1,4 @@
-// Variablen (#später auslagern):
-$color-highlight: #3ccfb6;
-// $color-highlight: #e8b81c;
-$color-bg-dark: #1c1c1c;
-$color-bg-primary: #1f2e2b;
-$color-bg-secondary: #26524a; 
-$color-error: #EC7B7B;
-
-
-$color-white: #ffffff;
-$color-grey: #d9d9d9;
-$color-gradient-highlight: linear-gradient(90deg, #1c1c1c 23%, #ffca1b 100%); //#raus
-
-$p-medium: 50px;
-$p-large: 100px;
-
-$font-basic: 'Karla', sans-serif;
-$font-highlight: 'Fira Code', monospace;
-
-// mixins (#später auslagern):
-
-@mixin dFlex($fd: row, $jc: center, $ai: center, $g: 0px) {
-  display: flex;
-  flex-direction: $fd;
-  justify-content: $jc;
-  align-items: $ai;
-  gap: $g;
-}
-
-@mixin dot($color: $color-highlight) {
-  height: 6.4px;
-  width: 6.4px;
-  border-radius: 50%;
-  background-color: $color;
-}
-
-@mixin item-divider {
-  border-top: 1px solid $color-highlight;
-
-  &:last-child {
-    border-bottom: 1px solid $color-highlight;
-  }
-}
+@use 'styles/variables' as *;
 
 * {
   margin: 0;
