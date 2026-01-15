@@ -5,7 +5,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   color: $color-white;
-  cursor: default;
+  // cursor: default; 
 }
 
 .content-container {
@@ -54,6 +54,7 @@ h3 {
 a {
   font-size: 20px;
   text-decoration: none;
+  // cursor: pointer;
 }
 
 .subtitle { 
