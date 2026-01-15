@@ -2,6 +2,10 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
+/* =========================
+   Base Typography
+   ========================= */
+
 p,
 a {
   font-size: 16px;
@@ -11,19 +15,30 @@ a {
   color: $color-white;
 }
 
+/* =========================
+   Layout
+   ========================= */
+
 .footer-content {
   @include dFlex($jc: space-between, $ai: flex-end);
   position: relative;
   padding: $p-medium 0;
 }
 
-// LINKE SEITE
+.footer-top {
+  @include dFlex($jc: space-between, $ai: flex-end);
+  width: 100%;
+}
+
+/* =========================
+   Brand (Left)
+   ========================= */
+
 .footer-brand {
   @include dFlex($fd: column, $ai: space-between, $g: 28px);
 }
 
 .logo {
-  //doppelt header
   width: 133px;
   height: 48px;
   background-image: url('../../../../public/img/hero/Logo-filled.svg');
@@ -33,7 +48,6 @@ a {
 }
 
 .logo:hover {
-  // doppelt header
   background-image: url('../../../../public/img/hero/Logo-outlines.svg');
 }
 
@@ -41,7 +55,9 @@ a {
   @include dFlex($fd: column, $ai: flex-start, $g: 4px);
 }
 
-// MITTE
+/* =========================
+   Copyright (Center)
+   ========================= */
 
 .footer-copyright {
   position: absolute;
@@ -59,14 +75,15 @@ a {
   color: $color-highlight;
 }
 
-// RECHTS
+/* =========================
+   Links (Right)
+   ========================= */
 
 .footer-links {
   @include dFlex($fd: column, $ai: flex-start, $g: 4px);
 }
 
 nav a {
-  //#doppelt
   position: relative;
   transition: color 0.5s ease;
 
@@ -76,7 +93,6 @@ nav a {
 }
 
 nav a .hover-point {
-  //#doppelt
   @include dot();
   position: absolute;
   left: -12px;
@@ -87,6 +103,61 @@ nav a .hover-point {
 }
 
 nav a:hover .hover-point {
-  //#doppelt
   opacity: 1;
+}
+
+/* =========================
+   Responsive (Mobile)
+   ========================= */
+
+@media (max-width: 768px) {
+  .footer-content {
+    @include dFlex($fd: column, $ai: stretch, $jc: flex-start, $g: 24px);
+    padding: 24px 0;
+  }
+
+  .p-lr {
+    padding-left: $p-small;
+    padding-right: $p-small;
+  }
+
+  .footer-top {
+    @include dFlex($jc: space-between, $ai: flex-start);
+    width: 100%;
+  }
+
+  .footer-brand {
+    gap: 24px;
+  }
+
+  .footer-links {
+    @include dFlex($fd: column, $ai: flex-end, $g: 8px);
+    text-align: right;
+  }
+
+  .footer-links a {
+    display: inline-block;
+  }
+
+  .footer-links a .hover-point {
+    left: auto;
+    right: -12px;
+  }
+
+  .footer-copyright {
+    position: static;
+    transform: none;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =========================
+   Responsive (Small Devices)
+   ========================= */
+
+@media (max-width: 370px) {
+  .copyright-text {
+    font-size: 16px;
+  }
 }
