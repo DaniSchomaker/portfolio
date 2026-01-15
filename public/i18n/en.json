@@ -13,5 +13,9 @@
 
   "aboutMe": {
     "title": "About me"
+  },
+
+  "footer": {
+    "jobtitle": "Web Developer"
   }
 }

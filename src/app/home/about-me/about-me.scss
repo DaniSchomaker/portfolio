@@ -2,67 +2,70 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-// section {
-//     background-color: white; // später raus!
-// }
-
-
-
 .layout {
-  @include dFlex($ai:flex-start, $g: $p-medium);
+  @include dFlex($ai: flex-start, $g: $p-medium);
   margin: $p-large 0;
-  // margin: 150px 0 $p-large 0;
-  // padding: $p-medium;
-  
-//   background-color: white;
 }
 
-/* Linke Spalte (Bildbereich) */
-.image-column {
-  flex: 1;
-  // border: 2px red solid;
+.image-column,
+.info-column {
+  flex: 1 1 0;
+  min-width: 0;
 }
+
+/* =========================
+   Image Column
+   ========================= */
 
 .photo-wrapper {
   position: relative;
-  width: 568px; /* so groß wie das Foto */
-  height: 568px;
+  width: 100%;
+  max-width: 568px;
+  aspect-ratio: 1 / 1;
 }
 
 .photo-bg {
   position: absolute;
-  top: 30px;
-  left: 0px;
+  top: clamp(10px, 5%, 30px);
+  left: -28px;
   width: 100%;
   height: 100%;
   z-index: 1;
 }
 
-.photo {
+.photo-clip {
   position: absolute;
-  left: 46px;
+  inset: 0;
+  border-radius: 30px;
+  overflow: hidden;
   z-index: 2;
+}
+
+.photo {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   display: block;
 }
 
-/* Rechte Spalte (Textbereich) */
+/* =========================
+   Info Column
+   ========================= */
+
 .info-column {
-  @include dFlex($fd: column, $ai: flex-start, $g: 10px);
-  flex: 1;
-  // border: 2px red solid;
+  @include dFlex($fd: column, $ai: flex-start, $g: 20px);
+}
+
+.subtitle {
+  margin-top: 98px;
 }
 
 .info-card {
-  border: 1px $color-highlight solid;
-  border-radius: 30px;
-  background-color: $color-bg-primary; 
-
-  //   width: 568px;
-  //   height: 540px;
-
+  width: 100%;
   padding: 0;
+  border: 1px solid $color-highlight;
+  border-radius: 30px;
+  background-color: $color-bg-primary;
 }
 
 .info-card-general {
@@ -71,46 +74,94 @@
   line-height: 1.2;
   letter-spacing: 0;
   color: $color-white;
-
-  padding: 8px 32px 32px 32px;
+  padding: 8px 32px 32px;
 }
 
+/* =========================
+   List & Items
+   ========================= */
 
-.info-list, ul {
+.info-list,
+ul {
   list-style: none;
   padding: 0;
   margin: 0 0 32px 0;
-
-  @include dFlex($fd: column, $ai: flex-start, $g: 20px);
+  @include dFlex($fd: column, $ai: flex-start, $g: 16px);
 }
 
-/* Jedes List-Item: Icon + Text nebeneinander */
 .info-item {
   @include dFlex($fd: row, $ai: flex-start, $g: 16px);
-
 }
 
-/* Icon */
 .info-icon {
   width: 32px;
   height: 32px;
-  flex-shrink: 0;  /* verhindert, dass das Icon gestaucht wird */
+  flex-shrink: 0;
   margin-left: 16px;
 }
 
-/* Text neben dem Icon */
 .info-text {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0;
   color: rgba($color: $color-white, $alpha: 0.8);
-  transition: color 0.3s ease; 
-
+  transition: color 0.3s ease;
   margin-right: 32px;
 
   &:hover {
     color: $color-white;
   }
+}
 
+/* =========================
+   Responsive 
+   ========================= */
+
+@media (max-width: 950px) {
+  .layout {
+    @include dFlex($fd: column, $ai: center, $g: $p-medium);
+  }
+
+  .image-column,
+  .info-column {
+    width: 100%;
+  }
+
+  .photo-wrapper {
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .info-column {
+    gap: 16px;
+  }
+
+  .subtitle {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .p-lr {
+    padding-left: $p-small;
+    padding-right: $p-small;
+  }
+
+  .photo-bg {
+    left: -12px;
+    top: 12px;
+  }
+
+  .subtitle {
+    margin-top: 12px;
+  }
+
+  .info-card p {
+    font-size: 16px;
+  }
+
+  .info-card-general {
+    padding: 5px 32px 24px 32px;
+  }
 }

@@ -5,15 +5,13 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   color: $color-white;
-  // cursor: default; 
+  // cursor: default;
 }
 
 .content-container {
   max-width: 1440px;
   padding: 0;
   margin: 0 auto; /* damit der Content in der Mitte des Screens angezeigt wird und nicht linksbündig  */
-
-  // border: 2px red solid;
 }
 
 html,
@@ -40,6 +38,12 @@ h2 {
   letter-spacing: -0.03em;
   color: $color-highlight;
   padding: 32px; //#raus? / einheitlich
+
+  @media (max-width: 768px) {
+    font-size: 56px;
+    line-height: 0.8;
+    padding: 27px 32px;
+  }
 }
 
 h3 {
@@ -57,12 +61,16 @@ a {
   // cursor: pointer;
 }
 
-.subtitle { 
+.subtitle {
   font-size: 24px;
-  font-weight: 500; 
+  font-weight: 500;
   line-height: 1;
   letter-spacing: 0;
   color: $color-highlight;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 }
 
 // body nur für die legal-notice-Seite, damit der Hintergrund hier auch den Footer umfasst
