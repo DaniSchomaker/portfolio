@@ -13,9 +13,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  overflow: hidden;
 }
 
-.hero-container {
+.content-container {
   @include dFlex($fd: column);
   position: relative;
   width: 100%;
@@ -285,5 +286,15 @@ h1 {
 @media (max-width: 400px) {
   h1 {
     font-size: 48px;
+  }
+}
+
+@media (max-height: 700px) {
+  .content-container {
+    @include dFlex($fd: column, $jc: flex-start);
+  }
+
+  .job-title {
+    margin-top: 100px;
   }
 }
