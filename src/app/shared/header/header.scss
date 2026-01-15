@@ -2,10 +2,13 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-// :host bezieht sich auf das <app-header>-Tag
+/* =========================
+   Host & Header Base
+   ========================= */
+
 :host {
   position: absolute;
-  top: 0;
+  top: 16px;
   left: 0;
   right: 0;
   z-index: 1000;
@@ -15,10 +18,19 @@ header {
   height: 80px;
 }
 
+.header-inner {
+  @include dFlex($jc: space-between, $ai: center);
+  height: 100%;
+}
+
 .content-container {
   @include dFlex($jc: space-between, $ai: center);
   height: 100%;
 }
+
+/* =========================
+   Navigation
+   ========================= */
 
 nav {
   @include dFlex($jc: flex-start, $ai: center, $g: 24px);
@@ -46,6 +58,10 @@ nav a:hover .hover-point {
   opacity: 1;
 }
 
+/* =========================
+   Logo
+   ========================= */
+
 .logo {
   width: 133px;
   height: 48px;
@@ -53,14 +69,16 @@ nav a:hover .hover-point {
   background-size: contain;
   background-repeat: no-repeat;
   transition: background-image 0.1s ease;
+  order: 3;
 }
 
-// #To Do: beim hovern "rückt das Bild noch etwas nach links
 .logo:hover {
   background-image: url('../../../../public/img/hero/Logo-outlines.svg');
 }
 
-// EN/DE (später nach oben)
+/* =========================
+   Language Toggle
+   ========================= */
 
 .language-toggle {
   @include dFlex($jc: space-between);
@@ -117,4 +135,114 @@ nav a:hover .hover-point {
 
 :host-context(.language-de) .language-slider {
   transform: translateX(40px);
+}
+
+/* =========================
+   Header Ordering (Desktop)
+   ========================= */
+
+.header-nav {
+  order: 1;
+}
+
+.burger-btn {
+  order: 2;
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover img {
+    content: url('../../../../public/img/icons/burger-hover.svg');
+  } 
+}
+
+.burger-btn.is-open img {
+  content: url('../../../../public/img/icons/burger-hover.svg');
+}
+
+/* =========================
+   Burger Menu Overlay
+   ========================= */
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba($color-bg-dark, 0.55);
+}
+
+.menu-panel {
+  position: absolute;
+  top: 90px;
+  right: 16px;
+  width: 238px;
+  height: 252px;
+  border-radius: 30px;
+  background-image: url('../../../../public/img/Hero_Background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: 1px solid $color-highlight;
+  padding: 40px 64px;
+
+  @include dFlex($fd: column, $ai: flex-start, $g: 24px);
+}
+
+.menu-links {
+  @include dFlex($fd: column, $ai: flex-start, $g: 24px);
+}
+
+.menu-link {
+  font-family: $font-highlight;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: $color-white;
+  cursor: pointer;
+}
+
+.menu-link:hover {
+  color: $color-highlight;
+}
+
+.menu-language {
+  @include dFlex($jc: flex-start);
+}
+
+/* =========================
+   Responsive (Mobile)
+   ========================= */
+
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+
+  .p-lr {
+    padding-left: $p-small;
+    padding-right: $p-small;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .burger-btn {
+    display: block;
+    order: 2;
+
+    > img {
+      width: 48px;
+      height: 48px;
+    }
+  }
 }

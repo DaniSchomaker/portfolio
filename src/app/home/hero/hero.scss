@@ -124,7 +124,6 @@ h1 {
     height: 32px;
     width: 32px;
     cursor: pointer;
-   
 
     &:hover .hover-point {
       opacity: 1;
@@ -251,11 +250,27 @@ h1 {
   .links-icons .email-icon {
     @include dFlex();
   }
+
+  .line-left {
+    height: 224px;
+  }
+
+  .line-right {
+    height: 112px;
+  }
+
+  .banner {
+    bottom: 32px;
+  }
 }
 
 @media (max-width: 500px) {
   h1 {
     font-size: 62px;
+  }
+
+  .phd {
+    font-size: 24px;
   }
 
   .hero-buttons {

@@ -48,7 +48,7 @@ p {
   max-width: 1224px;
   width: 85%;
   // height: 85%;
-  height: clamp(560px, 80vh, 760px);
+  // height: clamp(560px, 80vh, 760px);
   padding: $p-medium;
 }
 
@@ -61,10 +61,10 @@ p {
   // min-height: 540px;
 }
 
-.image-column {
+// .image-column {
   // width: 50%;
   // border: 2px pink solid;
-}
+// }
 
 .image-column img {
   width: 600px;

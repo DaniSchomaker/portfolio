@@ -1,17 +1,19 @@
 <header>
-  <div class="content-container p-lr">
-    <nav>
+  <div class="content-container p-lr header-inner">
+    <nav class="header-nav">
       <div class="language-toggle">
-        <button 
+        <button
           class="language-button"
-          [class.active]="currentLanguage === 'en'" 
-          (click)="useLanguage('en')">
+          [class.active]="currentLanguage === 'en'"
+          (click)="useLanguage('en')"
+        >
           EN
         </button>
-        <button 
+        <button
           class="language-button"
-          [class.active]="currentLanguage === 'de'" 
-          (click)="useLanguage('de')">
+          [class.active]="currentLanguage === 'de'"
+          (click)="useLanguage('de')"
+        >
           DE
         </button>
         <div class="language-slider"></div>
@@ -30,6 +32,55 @@
         <span class="hover-point"></span>
       </a>
     </nav>
+
+    <button
+      class="burger-btn"
+      type="button"
+      aria-label="Open menu"
+      (click)="toggleMenu()"
+      [class.is-open]="menuOpen"
+    >
+      <img src="img/icons/burger.svg" alt="" />
+    </button>
+
     <div class="logo"></div>
   </div>
+
+  @if (menuOpen) {
+  <div class="menu-overlay" (click)="closeMenu()">
+    <div class="menu-panel" (click)="$event.stopPropagation()">
+      <div class="menu-links">
+        <a class="menu-link" href="#about-me" (click)="closeMenu()">
+          {{ 'header.navigation-about-me' | translate }}
+        </a>
+        <a class="menu-link" href="#skills" (click)="closeMenu()">
+          {{ 'header.navigation-skills' | translate }}
+        </a>
+        <a class="menu-link" href="#projects" (click)="closeMenu()">
+          {{ 'header.navigation-projects' | translate }}
+        </a>
+      </div>
+
+      <div class="menu-language">
+        <div class="language-toggle">
+          <button
+            class="language-button"
+            [class.active]="currentLanguage === 'en'"
+            (click)="useLanguage('en')"
+          >
+            EN
+          </button>
+          <button
+            class="language-button"
+            [class.active]="currentLanguage === 'de'"
+            (click)="useLanguage('de')"
+          >
+            DE
+          </button>
+          <div class="language-slider"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
 </header>
