@@ -2,9 +2,6 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-.skills {
-}
-
 .content-container {
   background-image: url('../../../../public/img/skills/skills-bg.svg');
   background-size: cover;
@@ -16,41 +13,36 @@
   padding: $p-large 0;
 }
 
-//////// Linke Spalte (Textbereich)
-// #Frage: aus About-me nehmen?
+.info-column,
+.icons-column {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* =========================
+   Info Column
+   ========================= */
 
 .info-column {
   @include dFlex($fd: column, $ai: flex-start, $g: 10px);
-  flex: 1;
-
-  width: 500px; //#raus
-//   border: 2px red solid; //#raus
 }
 
 .info-card {
-  // doppelt in about-me?
-  border: 1px $color-highlight solid;
+  width: 100%;
+  padding: 0;
+  border: 1px solid $color-highlight;
   border-radius: 30px;
-  background-color: $color-bg-primary; 
-
-  width: 520px;
-  height: 503px;
-
-  padding: 0; //#32px gem. mockup?
+  background-color: $color-bg-primary;
 }
 
 .info-card-general {
-  // doppelt in about-me
   font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0;
   color: $color-white;
-
-  padding: 8px 32px 32px 32px;
-
+  padding: 8px 32px 32px;
   text-align: justify;
-
 }
 
 .span-wrapper {
@@ -75,39 +67,37 @@
   line-height: 1.2;
   letter-spacing: 0;
   color: $color-white;
-
   padding: 8px 32px;
 }
 
 .skills-button {
-  padding: 32px 32px;
+  padding: 32px;
 }
 
-//////// Rechte Spalte (Iconbereich)
+/* =========================
+   Icons Column
+   ========================= */
 
 .icons-column {
-  flex: 1;
   margin-top: 32px;
-
-//   border: 2px red solid; //#
 }
 
 .skills-wrapper {
-  @include dFlex($jc: flex-start, $g: $p-medium);
-  flex-wrap: wrap; // erlaubt Zeilenumbrüche
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));
+  gap: $p-medium;
+  justify-items: center;
 }
 
 .skill-item {
   @include dFlex($fd: column, $jc: flex-start, $ai: center, $g: 10px);
-
-  height: 116px;
   width: 104px;
-
-//   border: 2px green solid; //#
+  height: 116px;
 
   > p {
     text-align: center;
-    padding: 0px 6px;
+    padding: 0 6px;
   }
 }
 
@@ -121,4 +111,33 @@
   }
 }
 
+/* =========================
+   Responsive
+   ========================= */
 
+@media (max-width: 990px) {
+  .skills-wrapper {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 950px) {
+  .layout {
+    @include dFlex($fd: column, $ai: stretch, $g: $p-medium);
+  }
+}
+
+@media (max-width: 768px) {
+  .p-lr {
+    padding-left: $p-small;
+    padding-right: $p-small;
+  }
+
+  .span {
+    font-size: 20px;
+  }
+
+  .info-card-general {
+    font-size: 16px;
+  }
+}
