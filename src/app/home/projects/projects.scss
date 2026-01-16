@@ -2,21 +2,12 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-// .projects {
-// }
-
-.content-container {
-  //#
-  // border: 2px red solid;
-  // background-color: white;
-}
-
 .projects-intro {
-  padding: $p-large 0 40px 0;
+  padding: $p-large 0 36px 0;
 }
 
 h2 {
-  padding: 32px 0 $p-medium 0;
+  padding: 20px 0 40px 0;
 }
 
 .projects-intro-text {
@@ -41,7 +32,7 @@ h2 {
 .project-item {
   @include dFlex($jc: space-between);
   @include item-divider();
-  padding: 40px;
+  padding: 40px 32px;
   transition: background-color 0.3s ease;
   position: relative;
 
@@ -57,7 +48,8 @@ h2 {
     background-color: $color-bg-secondary;
   }
 
-  &:hover .hover-icon { // mit unten zusammenfassen?
+  &:hover .hover-icon {
+    // mit unten zusammenfassen?
     opacity: 1;
   }
 
@@ -83,9 +75,9 @@ h2 {
 
 .project-preview {
   position: absolute;
-//   top: 50%;
+  //   top: 50%;
   left: 100%;
-//   transform: translateY(-50%);
+  //   transform: translateY(-50%);
   margin-left: 40px;
   width: 380px;
   height: 230px;
@@ -104,14 +96,14 @@ h2 {
 }
 
 .project-img {
-//   top: -10px;
-//   right: 20px;
+  //   top: -10px;
+  //   right: 20px;
   z-index: 2;
 }
 
 .project-bg {
-//   top: 10px;
-//   right: 0;
+  //   top: 10px;
+  //   right: 0;
   z-index: 1;
 }
 
@@ -119,13 +111,13 @@ h2 {
 .pokedex .project-img {
   top: 40px;
   right: 20px;
-//   z-index: 2;
+  //   z-index: 2;
 }
 
 .pokedex .project-bg {
   top: 60px;
   right: 0px;
-//   z-index: 1;
+  //   z-index: 1;
 }
 
 .elpolloloco .project-img {
@@ -148,3 +140,20 @@ h2 {
   right: 0px;
 }
 
+@media (max-width: 768px) {
+  h2 {
+    padding: 16px 0 20px 0;
+  }
+  .projects-intro-text {
+    font-size: 16px;
+  }
+
+  .projects-intro {
+  padding: $p-large 0 32px 0;
+}
+
+.project-item {
+  @include dFlex($fd: column, $ai: flex-start, $g: 12px);
+  padding: 32px 0;
+}
+}
