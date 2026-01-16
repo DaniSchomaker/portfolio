@@ -173,7 +173,7 @@ h1 {
 
   position: absolute;
   bottom: 70px;
-  height: 60px;
+  height: 62px;
   left: 0;
   right: 0;
   background-color: rgba($color: $color-white, $alpha: 0.12);
@@ -262,6 +262,11 @@ h1 {
 
   .banner {
     bottom: 32px;
+    height: 53px;
+  }
+
+  .banner-wrapper p {
+    font-size: 24px;
   }
 }
 
