@@ -131,17 +131,12 @@ nav a:hover .hover-point {
   }
 
   .footer-links {
-    @include dFlex($fd: column, $ai: flex-end, $g: 8px);
+    @include dFlex($fd: column, $ai: flex-start, $g: 8px);
     text-align: right;
   }
 
   .footer-links a {
     display: inline-block;
-  }
-
-  .footer-links a .hover-point {
-    left: auto;
-    right: -12px;
   }
 
   .footer-copyright {
