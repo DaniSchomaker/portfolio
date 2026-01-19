@@ -10,7 +10,7 @@
 
 .layout {
   @include dFlex($ai: flex-start, $g: $p-medium);
-  padding: $p-large 0;
+  margin: $p-xlarge 0 0 0;
 }
 
 .info-column,
@@ -131,6 +131,10 @@
   .p-lr {
     padding-left: $p-small;
     padding-right: $p-small;
+  }
+
+  .layout {
+    margin: $p-large 0 0 0;
   }
 
   .span {

@@ -4,7 +4,7 @@
 
 .layout {
   @include dFlex($ai: flex-start, $g: $p-medium);
-  margin: $p-large 0;
+  margin: $p-xlarge 0 0 0;
 }
 
 .image-column,
@@ -146,6 +146,10 @@ ul {
   .p-lr {
     padding-left: $p-small;
     padding-right: $p-small;
+  }
+
+  .layout {
+    margin: $p-large 0 0 0;
   }
 
   .photo-bg {
