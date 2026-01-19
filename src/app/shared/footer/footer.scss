@@ -22,7 +22,7 @@ a {
 .footer-content {
   @include dFlex($jc: space-between, $ai: flex-end);
   position: relative;
-  padding: $p-medium 0;
+  margin: 0 0 $p-medium 0;
 }
 
 .footer-top {
@@ -113,7 +113,7 @@ nav a:hover .hover-point {
 @media (max-width: 768px) {
   .footer-content {
     @include dFlex($fd: column, $ai: stretch, $jc: flex-start, $g: 24px);
-    padding: 24px 0;
+    margin: 0 0 24px 0;
   }
 
   .p-lr {

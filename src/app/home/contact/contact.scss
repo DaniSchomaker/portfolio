@@ -4,7 +4,7 @@
 
 .layout {
   @include dFlex($jc: space-between, $ai: flex-start, $g: $p-medium);
-  margin: $p-xlarge 0 0 0;
+  margin: $p-xlarge 0;
 }
 
 h2 {
@@ -234,7 +234,7 @@ input {
   }
   .layout {
     @include dFlex($fd: column, $g: 60px);
-    margin: $p-large 0 0 0;
+    margin: $p-large 0;
   }
 
   .info-column,
