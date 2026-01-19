@@ -2,10 +2,9 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-
 .layout {
   @include dFlex($jc: space-between, $ai: flex-start, $g: $p-medium);
-  padding: $p-large 0; // #oder margin/padding? einheitlich
+  margin: $p-xlarge 0 0 0;
 }
 
 h2 {
@@ -32,6 +31,10 @@ h3 {
   }
 }
 
+.checkbox-text {
+  font-size: 15px;
+}
+
 .contact-form {
   position: relative;
   flex: 1;
@@ -39,6 +42,9 @@ h3 {
 }
 
 ////// Input-Felder
+input {
+  padding: 0;
+}
 
 .contact-item {
   @include item-divider();
@@ -175,9 +181,9 @@ h3 {
 
   .hover-line {
     position: absolute;
-    bottom: -6px;
-    left: -6px;
-    right: -6px;
+    bottom: -1px;
+    left: -4px;
+    right: -4px;
     height: 1px;
     background-color: $color-highlight;
     opacity: 0;
@@ -219,4 +225,38 @@ h3 {
   -webkit-box-shadow: 0 0 0 1000px $color-bg-dark inset;
   box-shadow: 0 0 0 1000px $color-bg-dark inset;
   -webkit-text-fill-color: $color-white;
+}
+
+@media (max-width: 768px) {
+  .p-lr {
+    padding-left: $p-small;
+    padding-right: $p-small;
+  }
+  .layout {
+    @include dFlex($fd: column, $g: 60px);
+    margin: $p-large 0 0 0;
+  }
+
+  .info-column,
+  .contact-form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  h2 {
+    padding: 16px 0 32px 0;
+  }
+
+  .info-column p {
+    padding: 12px 0;
+  }
+
+  .contact-item {
+    padding: 32px 16px;
+  }
+
+  .contact-question {
+    font-size: 20px;
+  }
+
 }

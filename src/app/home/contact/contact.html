@@ -28,7 +28,7 @@
               #name="ngModel"
               [placeholder]="
                 !name.valid && name.touched
-                  ? 'Oooops! It seems your name is missing'
+                  ? 'Your name is required'
                   : 'Your name goes here'
               "
               [class.input-error]="!name.valid && name.touched"
@@ -49,7 +49,7 @@
               email
               [placeholder]="
                 !email.valid && email.touched
-                  ? 'Hoppla! Your email is required'
+                  ? 'Your email is required'
                   : 'youremail@email.com'
               "
               [class.input-error]="!email.valid && email.touched"
@@ -92,7 +92,7 @@
             <img src="img/icons/contact-check-hover.svg" alt="" class="hover-circle" />
           </span>
 
-          <p>
+          <p class="checkbox-text">
             I've read the
             <a href="" target="_blank" class="link-highlight">
               privacy policy<span class="hover-line"></span>
@@ -101,7 +101,7 @@
           </p>
         </label>
         @if (consent.invalid && consent.touched) {
-        <span class="error-message">Please accept the privacy policy</span>
+        <span class="error-message">Please accept the privacy policy.</span>
         }
 
         <button class="contact-submit-button button-animated" [disabled]="!consent.valid">
