@@ -140,7 +140,22 @@ button {
   }
 }
 
+// .p-lr {
+//   padding-left: $p-medium;
+//   padding-right: $p-medium;
+// }
+
 .p-lr {
-  padding-left: $p-medium;
-  padding-right: $p-medium;
+  padding-left: $p-large;
+  padding-right: $p-large;
+
+  @media (max-width: 1100px) {
+    padding-left: $p-medium;
+    padding-right: $p-medium;
+  }
+
+  @media (max-width: 768px) {
+    padding-left: $p-small;
+    padding-right: $p-small;
+  }
 }
