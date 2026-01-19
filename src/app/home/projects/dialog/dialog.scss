@@ -58,10 +58,9 @@ p {
   @include dFlex($jc: space-between, $ai: stretch, $g: $p-medium);
   width: 100%;
   height: 100%;
-  padding: 60px 0 90px; // oben Platz für close, unten Platz für Next button
+  padding: 60px 0 90px; 
   box-sizing: border-box;
 }
-
 
 .info-column {
   flex: 1 1 0;
@@ -120,8 +119,7 @@ p {
   @include dFlex();
 }
 
-.close-btn {
-  //# einheitlich button statt btn
+.close-button {
   position: absolute;
   top: 40px;
   right: 40px;
@@ -130,9 +128,9 @@ p {
   cursor: pointer;
 }
 
-.close-btn:hover img {
+.close-button:hover img {
   content: url('../../../../../public/img/icons/dialog-close-button-hover.svg');
-} //# Achtung: noch "harter" Übergang. Content kennt keine transition. ggf. mit opacity arbeiten?
+} 
 
 .next-project-button {
   @include dFlex($g: 6px);

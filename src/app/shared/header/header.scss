@@ -145,7 +145,7 @@ nav a:hover .hover-point {
   order: 1;
 }
 
-.burger-btn {
+.burger-button {
   order: 2;
   display: none;
   background: none;
@@ -165,7 +165,7 @@ nav a:hover .hover-point {
   } 
 }
 
-.burger-btn.is-open img {
+.burger-button.is-open img {
   content: url('../../../../public/img/icons/burger-hover.svg');
 }
 
@@ -236,7 +236,7 @@ nav a:hover .hover-point {
     order: 1;
   }
 
-  .burger-btn {
+  .burger-button {
     display: block;
     order: 2;
 
