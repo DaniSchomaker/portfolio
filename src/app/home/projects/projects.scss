@@ -5,7 +5,7 @@
 $preview-spacer: 360px;
 
 .layout {
-  margin: $p-xlarge 0;
+  margin: 0 0 $p-xlarge 0;
 }
 
 .content-container {
@@ -202,7 +202,7 @@ h2 {
 
 @media (max-width: 768px) {
   .layout {
-    margin: $p-large 0;
+    margin: 0 0 $p-large 0;
   }
 
   h2 {

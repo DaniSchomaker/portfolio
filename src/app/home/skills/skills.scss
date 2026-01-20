@@ -10,7 +10,7 @@
 
 .layout {
   @include dFlex($ai: flex-start, $g: $p-medium);
-  margin: $p-xlarge 0 0 0;
+  padding: $p-xlarge 0;
 }
 
 .info-column,
@@ -129,7 +129,7 @@
 
 @media (max-width: 768px) {
   .layout {
-    margin: $p-large 0 0 0;
+    padding: $p-large 0;
   }
 
   .span {
