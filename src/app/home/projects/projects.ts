@@ -3,6 +3,11 @@ import { Component } from '@angular/core';
 import { PROJECTS, Project } from '../../interfaces/project.interface';
 import { Dialog } from './dialog/dialog';
 
+type ProjectTechEntry = {
+  name: string;
+  isLast: boolean;
+};
+
 @Component({
   selector: 'app-projects',
   standalone: true,
@@ -11,7 +16,8 @@ import { Dialog } from './dialog/dialog';
   styleUrl: './projects.scss',
 })
 export class Projects {
-  projects = PROJECTS;
+  readonly projects: Project[] = PROJECTS;
+
   selectedProject: Project | null = null;
 
   openDialog(project: Project) {
@@ -25,11 +31,23 @@ export class Projects {
   goToNextProject() {
     if (!this.selectedProject) return;
 
-    const currentIndex = PROJECTS.findIndex(
-      (p) => p.id === this.selectedProject!.id
+    const currentIndex = this.projects.findIndex(
+      (project) => project.id === this.selectedProject?.id,
     );
+    if (currentIndex === -1) return;
 
-    const nextIndex = (currentIndex + 1) % PROJECTS.length;
-    this.selectedProject = PROJECTS[nextIndex];
+    const nextIndex = (currentIndex + 1) % this.projects.length;
+    this.selectedProject = this.projects[nextIndex];
+  }
+
+  getPreviewClass(project: Project) {
+    return `project-${project.id}`;
+  }
+
+  getTechEntries(project: Project): ProjectTechEntry[] {
+    return project.tech.map((techItem, index) => ({
+      name: techItem.name,
+      isLast: index === project.tech.length - 1,
+    }));
   }
 }

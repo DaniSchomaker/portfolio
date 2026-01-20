@@ -2,9 +2,19 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
+$preview-spacer: 360px;
+
 .layout {
-  margin: $p-xlarge 0 0 0;
+  margin: $p-xlarge 0;
 }
+
+.content-container {
+  overflow: hidden;
+}
+
+/* =========================
+   Intro
+   ========================= */
 
 .projects-intro {
   margin-bottom: 36px;
@@ -14,35 +24,42 @@ h2 {
   padding: 20px 0 40px 0;
 }
 
-.content-container {
-  overflow: hidden;
-}
-
 .projects-intro-text {
   max-width: 400px;
-
   font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0;
 }
 
-///// Projektliste
+/* =========================
+   Overview
+   ========================= */
+
 .projects-overview {
   @include dFlex($jc: flex-start);
 }
 
 .projects-list {
-  width: 900px; //############
-  // margin-bottom: $p-large;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 900px;
 }
+
+.preview-spacer {
+  flex: 0 0 $preview-spacer;
+}
+
+/* =========================
+   Project Item
+   ========================= */
 
 .project-item {
   @include dFlex($jc: space-between);
   @include item-divider();
+  position: relative;
   padding: 40px 32px;
   transition: background-color 0.3s ease;
-  position: relative;
 
   > p {
     font-size: 18px;
@@ -54,15 +71,14 @@ h2 {
 
   &:hover {
     background-color: $color-bg-secondary;
-  }
 
-  &:hover .hover-icon {
-    // mit unten zusammenfassen?
-    opacity: 1;
-  }
+    .hover-icon {
+      opacity: 1;
+    }
 
-  &:hover .project-preview {
-    opacity: 1;
+    .project-preview {
+      opacity: 1;
+    }
   }
 }
 
@@ -81,20 +97,28 @@ h2 {
   color: $color-highlight;
 }
 
+/* =========================
+   Preview Container
+   ========================= */
+
 .project-preview {
   position: absolute;
-  //   top: 50%;
-  left: 100%;
-  //   transform: translateY(-50%);
-  margin-left: 40px;
+  top: 50%;
+  right: calc(-1 * $preview-spacer);
+  transform: translateY(-50%);
+
   width: 380px;
   height: 230px;
+
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
-/* Default-Positionen für Bild + Hintergrund */
+/* =========================
+   Preview Images
+   ========================= */
+
 .project-img,
 .project-bg {
   position: absolute;
@@ -104,63 +128,83 @@ h2 {
 }
 
 .project-img {
-  //   top: -10px;
-  //   right: 20px;
   z-index: 2;
 }
 
 .project-bg {
-  //   top: 10px;
-  //   right: 0;
   z-index: 1;
 }
 
-/* Pokédex – eigene Positionen */
-.pokedex .project-img {
-  top: 40px;
-  right: 20px;
-  //   z-index: 2;
+/* =========================
+   Project-specific Positions
+   ========================= */
+.project-01 {
+  .project-img {
+    top: 40px;
+    right: 20px;
+  }
+
+  .project-bg {
+    top: 60px;
+    right: 0;
+  }
 }
 
-.pokedex .project-bg {
-  top: 60px;
-  right: 0px;
-  //   z-index: 1;
+.project-02 {
+  .project-img {
+    top: 20px;
+    right: 20px;
+  }
+
+  .project-bg {
+    top: 40px;
+    right: 0;
+  }
 }
 
-.elpolloloco .project-img {
-  top: 20px;
-  right: 20px;
+.project-03 {
+  .project-img {
+    top: 0;
+    right: 20px;
+  }
+
+  .project-bg {
+    top: 20px;
+    right: 0;
+  }
 }
 
-.elpolloloco .project-bg {
-  top: 40px;
-  right: 0px;
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 1000px) {
+  .project-item {
+    padding: 40px 16px;
+  }
+
+  .project-preview {
+    width: 300px;
+    height: 182px;
+  }
 }
 
-.join .project-img {
-  top: 0px;
-  right: 20px;
-}
-
-.join .project-bg {
-  top: 20px;
-  right: 0px;
+@media (max-width: 950px) {
+  .preview-spacer,
+  .project-preview {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
-  .p-lr {
-    padding-left: $p-small;
-    padding-right: $p-small;
-  }
-
   .layout {
-    margin: $p-large 0 0 0;
+    margin: $p-large 0;
   }
 
   h2 {
     padding: 16px 0 20px 0;
   }
+
   .projects-intro-text {
     font-size: 16px;
   }
