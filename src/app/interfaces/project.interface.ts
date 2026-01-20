@@ -51,7 +51,7 @@ export const PROJECTS: Project[] = [
       { icon: 'img/icons/dialog-html.svg', name: 'HTML' },
       { icon: 'img/icons/dialog-css.svg', name: 'CSS' }
     ],
-    shortDescription: 'Task manager inspired by the Kanban system.',
+    shortDescription: 'Task manager inspired by the Kanban system. Task manager inspired by the Kanban system.',
     image: 'img/projects/join.png',
     github: 'https://github.com/deinRepo/join',
     live: 'https://join.deinlive.de',

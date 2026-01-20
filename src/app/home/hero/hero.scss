@@ -183,7 +183,7 @@ h1 {
 
 .banner-wrapper {
   display: inline-flex;
-  animation: bannerAnimation 20s linear infinite;
+  animation: bannerAnimation 30s linear infinite;
 
   > p {
     font-family: $font-basic;
@@ -214,7 +214,7 @@ h1 {
 }
 
 /* =========================
-   HERO – RESPONSIVE
+  RESPONSIVE
    ========================= */
 
 @media (max-width: 900px) {

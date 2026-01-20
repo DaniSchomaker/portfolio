@@ -8,13 +8,23 @@
   "hero": {
     "jobtitle": "Frontend Entwicklerin",
     "projects-button": "Meine Projekte",
-    "contact-button": "Kontaktiere mich"
+    "contact-button": "Kontaktiere mich",
+    "banner-01": "Taxation + Education + Technologie = TaxEdTech ❤",
+    "banner-02": "Frontend Entwicklung",
+    "banner-03": "Serious Games",
+    "banner-04": "Gamification",
+    "banner-05": "digitale Steuer-Tools",
+    "banner-06": "Forschung"
+
   },
 
   "aboutMe": {
+    "subtitle": "Wer ich bin",
     "title": "Über mich",
     "intro": "Hi, ich bin Dani. Als Frontend-Entwicklerin und Steuerberaterin mit wissenschaftlichem Hintergrund begeistert mich die Schnittstelle von Steuerrecht, Bildung und Technologie. Mein Wirkungsbereich: TaxTech & EdTech",
-    "residence": "Ich lebe im Duisburger Westen und bin offen für regionale sowie remote Projekte."
+    "residence": "Mein Lebensmittelpunkt ist der Duisburger Westen, und ich bin offen für projektbasierte Zusammenarbeit, sowohl regional als auch remote",
+    "openness": "Ich lerne gerne neue Technologien kennen und nutze sie, um passende Lösungen für konkrete Herausforderungen zu entwickeln.",
+    "improve": "Ich arbeite mich gerne Schritt für Schritt durch komplexe Fragestellungen und sehe jedes Projekt als Chance, mich weiterzuentwickeln."
   },
 
   "footer": {

@@ -8,11 +8,22 @@
   "hero": {
     "jobtitle": "Frontend Developer",
     "projects-button": "Check my work",
-    "contact-button": "Contact me"
+    "contact-button": "Contact me",
+    "banner-01": "Taxation + Education + Technologie = TaxEdTech ❤",
+    "banner-02": "Frontend Development",
+    "banner-03": "Serious Games",
+    "banner-04": "Gamification",
+    "banner-05": "digital tax tools",
+    "banner-06": "Research"
   },
 
   "aboutMe": {
-    "title": "About me"
+    "subtitle": "Who I am",
+    "title": "About me",
+    "intro": "Hi, I’m Dani. As a frontend developer and certified tax advisor with a research background, I’m fascinated by the intersection of tax law, education and technology. My Playground: TaxTech & EdTech.",
+    "residence": "I’m based in the western part of Duisburg and open to project-based collaboration, both regionally and remotely.",
+    "openness": "I enjoy learning new technologies and using them to develop suitable solutions for concrete challenges.",
+    "improve": "I enjoy working through complex questions step by step and seeing every project as an opportunity to improve."
   },
 
   "footer": {
