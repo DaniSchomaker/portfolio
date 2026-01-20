@@ -2,6 +2,10 @@
 @use '../../../../styles/variables' as *;
 @use '../../../../styles/mixins' as *;
 
+/* =========================
+   Typography
+   ========================= */
+
 h1 {
   color: $color-highlight;
   padding: 0 0 24px 0;
@@ -28,6 +32,10 @@ p {
   padding: 0 0 32px 0;
 }
 
+/* =========================
+   Overlay
+   ========================= */
+
 .dialog-overlay {
   @include dFlex();
   position: fixed;
@@ -35,6 +43,10 @@ p {
   background: rgba(0, 0, 0, 0.55);
   z-index: 2000;
 }
+
+/* =========================
+   Card Layout
+   ========================= */
 
 .dialog-card {
   position: relative;
@@ -55,6 +67,10 @@ p {
   @include dFlex($fd: column, $ai: stretch);
 }
 
+/* =========================
+   Buttons
+   ========================= */
+
 .close-button {
   position: static;
   align-self: flex-end;
@@ -70,6 +86,46 @@ p {
   content: url('../../../../../public/img/icons/dialog-close-button-hover.svg');
 }
 
+.next-project-button {
+  @include dFlex($g: 6px);
+  position: static;
+  align-self: flex-end;
+  margin: 0 50px 50px 0;
+
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: $color-highlight;
+  transition: color 0.3s ease;
+  background: transparent;
+
+  > img {
+    transition: transform 1s ease;
+  }
+
+  &:hover {
+    color: $color-white;
+  }
+
+  &:hover img {
+    content: url('../../../../../public/img/icons/dialog-arrow-forward-bold.svg');
+    transform: translate(4px, 0px);
+  }
+
+  &:active {
+    color: $color-highlight;
+  }
+
+  &:active img {
+    content: url('../../../../../public/img/icons/dialog-arrow-forward-light.svg');
+    transform: translate(0, 0);
+  }
+}
+
+/* =========================
+   Content Layout
+   ========================= */
+
 .dialog-content {
   @include dFlex($jc: space-between, $ai: stretch, $g: $p-medium);
 
@@ -81,7 +137,25 @@ p {
   overflow-y: auto;
   overflow-x: hidden;
 
-  border: 2px solid red;
+  scrollbar-width: thin;
+  scrollbar-color: $color-highlight transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-highlight;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: lighten($color-highlight, 8%);
+  }
 }
 
 .info-column {
@@ -93,37 +167,22 @@ p {
   flex: 1 1 0;
   min-width: 0;
   @include dFlex($jc: flex-end, $ai: center);
+
+  img {
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 520 / 330;
+    height: auto;
+
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+  }
 }
 
-// .image-column img {
-//   width: 100%;
-//   height: auto;
-//   object-fit: cover;
-//   border-radius: 16px;
-//   display: block;
-// }
-
-// .image-column img {
-//   width: 520px; // 👈 eine feste Breite
-//   height: 330px; // 👈 eine feste Höhe
-
-//   object-fit: cover; // 👈 schneidet sauber zu
-//   border-radius: 16px;
-//   display: block;
-// }
-
-.image-column img {
-  width: 100%;
-  max-width: 520px;
-  aspect-ratio: 520 / 330;
-  height: auto;
-
-  object-fit: cover;
-  border-radius: 16px;
-  display: block;
-}
-
-
+/* =========================
+   Tech Stack
+   ========================= */
 
 .project-tech {
   @include dFlex($jc: flex-start, $g: 24px);
@@ -133,6 +192,10 @@ p {
 .tech-item {
   @include dFlex($g: 6px);
 }
+
+/* =========================
+   Links
+   ========================= */
 
 .project-links {
   @include dFlex($jc: flex-start, $g: 30px);
@@ -183,60 +246,11 @@ p {
   }
 }
 
-.next-project-button {
-  @include dFlex($g: 6px);
-  position: static;
-  align-self: flex-end;
-  margin: 0 50px 50px 0;
-
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: $color-highlight;
-  transition: color 0.3s ease;
-  background: transparent;
-
-  > img {
-    transition: transform 1s ease;
-  }
-
-  &:hover {
-    color: $color-white;
-  }
-
-  &:hover img {
-    content: url('../../../../../public/img/icons/dialog-arrow-forward-bold.svg');
-    transform: translate(4px, 0px);
-  }
-
-  &:active {
-    color: $color-highlight;
-  }
-
-  &:active img {
-    content: url('../../../../../public/img/icons/dialog-arrow-forward-light.svg');
-    transform: translate(0, 0);
-  }
-}
+/* =========================
+   Responsive
+   ========================= */
 
 @media (max-width: 1100px) {
-
-  .dialog-content {
-  @include dFlex($jc: space-between, $ai: stretch, $g: $p-small);
-  padding: 0 40px;
-
-  .info-column {
-    flex: 0 0 60%;
-  }
-
-  .image-column {
-    flex: 0 0 40%;
-  }
-}
-}
-
-
-@media (max-width: 768px) {
   h1 {
     font-size: 72px;
     padding: 0 0 8px 0;
@@ -257,6 +271,7 @@ p {
 
   .dialog-card {
     width: 92vw;
+    max-width: 600px;
     height: 92dvh;
   }
 
@@ -265,16 +280,48 @@ p {
   }
 
   .dialog-content {
-    @include dFlex($fd: column-reverse, $g: 32px);
-    padding: 20px 12px;
+    @include dFlex($fd: column, $ai: stretch, $g: 16px);
+    justify-content: flex-start;
+
+    flex: 1 1 auto;
+    min-height: 0;
+
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .image-column {
+    order: 0;
+    width: 100%;
+    flex: 0 0 auto;
+
+    @include dFlex($jc: center, $ai: flex-start);
+  }
+
+  .info-column {
+    order: 1;
+    width: 100%;
+    flex: 0 0 auto;
   }
 
   .next-project-button {
     margin: 0 25px 25px 0;
   }
+}
 
-  //   .image-column img {
-  //   width: 100%;
-  //   height: 200px;
-  // }
+@media (max-width: 552px) {
+  .dialog-content {
+    padding: 0 $p-small;
+  }
+}
+
+@media (max-width: 360px) {
+  .project-links {
+    @include dFlex($fd: column, $g: 16px);
+  }
+
+  .dialog-button {
+    width: 142px;
+  }
 }
