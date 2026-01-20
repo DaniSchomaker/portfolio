@@ -1,7 +1,7 @@
 <div class="dialog-overlay" (click)="onOverlayClick()">
   <div class="dialog-card" (click)="onDialogClick($event)">
-    <button class="close-button" (click)="close.emit()">
-      <img src="img/icons/dialog-close-button.svg" alt="close button" />
+    <button class="close-button" type="button" (click)="close.emit()">
+      <img src="img/icons/dialog-close-button.svg" alt="Close dialog" />
     </button>
 
     <div class="dialog-content">
@@ -12,42 +12,49 @@
         <p>{{ project.shortDescription }}</p>
 
         <div class="project-tech">
-          @for (item of project.tech; track item) { 
-          <div class="tech-item">
-            <img [src]="item.icon" [alt]="item.name" />
-            <span>{{ item.name }}</span>
-          </div>
+          @for (item of project.tech; track item) {
+            <div class="tech-item">
+              <img [src]="item.icon" [alt]="item.name" />
+              <span>{{ item.name }}</span>
+            </div>
           }
         </div>
 
         <div class="project-links">
-          <a [href]="project.github" target="_blank">
-            <button class="dialog-button">
-              <span class="button-text"
-                >GitHub
-                <img src="img/icons/dialog-arrow-forward-light.svg" alt="" />
-              </span></button
-          ></a>
+          <a
+            class="dialog-button"
+            [href]="project.github"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="button-text">
+              GitHub
+              <img src="img/icons/dialog-arrow-forward-light.svg" alt="" />
+            </span>
+          </a>
 
-          <a [href]="project.live" target="_blank">
-            <button class="dialog-button">
-              <span class="button-text"
-                >Live Test
-                <img src="img/icons/dialog-arrow-forward-light.svg" alt="" />
-              </span></button
-          ></a>
+          <a
+            class="dialog-button"
+            [href]="project.live"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="button-text">
+              Live Test
+              <img src="img/icons/dialog-arrow-forward-light.svg" alt="" />
+            </span>
+          </a>
         </div>
       </div>
 
       <div class="image-column">
         <img [src]="project.image" alt="Project preview" />
       </div>
-
     </div>
 
     <button class="next-project-button" type="button" (click)="onNextClick($event)">
       Next project
-       <img src="img/icons/dialog-arrow-forward-light.svg" alt="next project button">
+      <img src="img/icons/dialog-arrow-forward-light.svg" alt="" />
     </button>
   </div>
 </div>

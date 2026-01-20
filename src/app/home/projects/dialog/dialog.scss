@@ -19,7 +19,6 @@ h3 {
 }
 
 p {
-  // #auslagern?
   font-family: $font-basic;
   font-weight: 400;
   font-size: 18px;
@@ -32,7 +31,7 @@ p {
 .dialog-overlay {
   @include dFlex();
   position: fixed;
-  inset: 0; // deckt den ganzen Bildschirm ab
+  inset: 0;
   background: rgba(0, 0, 0, 0.55);
   z-index: 2000;
 }
@@ -46,20 +45,43 @@ p {
   border: 1px solid $color-highlight;
   border-radius: 30px;
 
-  width: min(1248px, calc(100vw - 64px));
-  height: min(656px, calc(100vh - 64px));
+  width: min(1400px, 85vw);
+  height: min(800px, 85vh);
 
-  padding: 0 80px;
+  padding: 0;
   overflow: hidden;
-  display: block;
+  box-sizing: border-box;
+
+  @include dFlex($fd: column, $ai: stretch);
+}
+
+.close-button {
+  position: static;
+  align-self: flex-end;
+  margin: 40px 40px 0 0;
+
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+.close-button:hover img {
+  content: url('../../../../../public/img/icons/dialog-close-button-hover.svg');
 }
 
 .dialog-content {
   @include dFlex($jc: space-between, $ai: stretch, $g: $p-medium);
+
+  flex: 1 1 auto;
+  min-height: 0;
   width: 100%;
-  height: 100%;
-  padding: 60px 0 90px; 
-  box-sizing: border-box;
+
+  padding: 0 80px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border: 2px solid red;
 }
 
 .info-column {
@@ -73,13 +95,35 @@ p {
   @include dFlex($jc: flex-end, $ai: center);
 }
 
+// .image-column img {
+//   width: 100%;
+//   height: auto;
+//   object-fit: cover;
+//   border-radius: 16px;
+//   display: block;
+// }
+
+// .image-column img {
+//   width: 520px; // 👈 eine feste Breite
+//   height: 330px; // 👈 eine feste Höhe
+
+//   object-fit: cover; // 👈 schneidet sauber zu
+//   border-radius: 16px;
+//   display: block;
+// }
+
 .image-column img {
   width: 100%;
+  max-width: 520px;
+  aspect-ratio: 520 / 330;
   height: auto;
+
   object-fit: cover;
   border-radius: 16px;
   display: block;
 }
+
+
 
 .project-tech {
   @include dFlex($jc: flex-start, $g: 24px);
@@ -96,52 +140,61 @@ p {
 }
 
 .dialog-button {
-  &:hover {
-    border-color: $color-highlight;
-  }
-
-  &:hover .button-text {
-    color: $color-highlight;
-  }
-
-  .button-text img {
-    height: 20px;
-    transform: translate(0, 0) rotate(-45deg);
-    transition: transform 0.2s ease;
-  }
-
-  &:hover .button-text img {
-    transform: translate(4px, -4px) rotate(-45deg);
-  }
-}
-
-.button-text {
   @include dFlex();
-}
+  box-sizing: border-box;
 
-.close-button {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  border: none;
-  padding: 0;
+  font-family: $font-basic;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-white;
+
+  background-color: transparent;
+
+  border: 1px solid $color-white;
+  border-radius: 100px;
+
+  padding: 12px 24px;
   cursor: pointer;
-}
+  text-decoration: none;
 
-.close-button:hover img {
-  content: url('../../../../../public/img/icons/dialog-close-button-hover.svg');
-} 
+  &:hover {
+    color: $color-highlight;
+    border-color: $color-highlight;
+
+    .button-text {
+      color: $color-highlight;
+
+      img {
+        transform: translate(4px, -4px) rotate(-45deg);
+      }
+    }
+  }
+
+  .button-text {
+    @include dFlex();
+
+    img {
+      height: 20px;
+      transform: translate(0, 0) rotate(-45deg);
+      transition: transform 0.2s ease;
+    }
+  }
+}
 
 .next-project-button {
   @include dFlex($g: 6px);
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
+  position: static;
+  align-self: flex-end;
+  margin: 0 50px 50px 0;
+
   border: none;
   padding: 0;
   cursor: pointer;
   color: $color-highlight;
   transition: color 0.3s ease;
+  background: transparent;
 
   > img {
     transition: transform 1s ease;
@@ -164,4 +217,64 @@ p {
     content: url('../../../../../public/img/icons/dialog-arrow-forward-light.svg');
     transform: translate(0, 0);
   }
+}
+
+@media (max-width: 1100px) {
+
+  .dialog-content {
+  @include dFlex($jc: space-between, $ai: stretch, $g: $p-small);
+  padding: 0 40px;
+
+  .info-column {
+    flex: 0 0 60%;
+  }
+
+  .image-column {
+    flex: 0 0 40%;
+  }
+}
+}
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 72px;
+    padding: 0 0 8px 0;
+  }
+
+  h2 {
+    padding: 0 0 30px 0;
+  }
+
+  h3 {
+    padding: 0 0 16px 0;
+  }
+
+  p {
+    font-size: 16px;
+    padding: 0 0 16px 0;
+  }
+
+  .dialog-card {
+    width: 92vw;
+    height: 92dvh;
+  }
+
+  .close-button {
+    margin: 20px 20px 0 0;
+  }
+
+  .dialog-content {
+    @include dFlex($fd: column-reverse, $g: 32px);
+    padding: 20px 12px;
+  }
+
+  .next-project-button {
+    margin: 0 25px 25px 0;
+  }
+
+  //   .image-column img {
+  //   width: 100%;
+  //   height: 200px;
+  // }
 }
