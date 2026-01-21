@@ -2,24 +2,25 @@
   <div class="content-container p-lr">
     <div class="layout">
       <div class="info-column">
-        <span class="subtitle">Contact me</span>
-        <h2>Let's work together</h2>
-        <h3>Got a problem to solve?</h3>
+        <span class="subtitle">{{ 'contact.subtitle' | translate }}</span>
+        <h2>{{ 'contact.title' | translate }}</h2>
+        <h3>{{ 'contact.problem' | translate }}</h3>
 
         <p>
-          Encourage People to contact you and describe what role you are interested in. <br />
-          Show that you will add value to their Projects through your work.
+          {{ 'contact.invitation' | translate }}
         </p>
         <p>
-          Need a Frontend developer?
-          <span class="span">Let's talk!</span>
+          {{ 'contact.need' | translate }}
+          <span class="span">{{ 'contact.talk' | translate }}</span>
         </p>
       </div>
 
       <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
         <div>
           <div class="contact-item">
-            <label for="name" class="contact-question">What's your name?</label>
+            <label for="name" class="contact-question">{{
+              'contact.name.label' | translate
+            }}</label>
             <input
               [(ngModel)]="contactData.name"
               id="name"
@@ -28,8 +29,8 @@
               #name="ngModel"
               [placeholder]="
                 !name.valid && name.touched
-                  ? 'Your name is required'
-                  : 'Your name goes here'
+                  ? ('contact.name.error' | translate)
+                  : ('contact.name.placeholder' | translate)
               "
               [class.input-error]="!name.valid && name.touched"
               class="input-text"
@@ -37,7 +38,9 @@
             />
           </div>
           <div class="contact-item">
-            <label for="email" class="contact-question">What's your email?</label>
+            <label for="email" class="contact-question">{{
+              'contact.email.label' | translate
+            }}</label>
             <input
               [(ngModel)]="contactData.email"
               #email="ngModel"
@@ -49,14 +52,16 @@
               email
               [placeholder]="
                 !email.valid && email.touched
-                  ? 'Your email is required'
-                  : 'youremail@email.com'
+                  ? ('contact.email.error' | translate)
+                  : ('contact.email.placeholder' | translate)
               "
               [class.input-error]="!email.valid && email.touched"
             />
           </div>
           <div class="contact-item">
-            <label for="message" class="contact-question">How can I help you?</label>
+            <label for="message" class="contact-question">{{
+              'contact.message.label' | translate
+            }}</label>
             <input
               [(ngModel)]="contactData.message"
               #message="ngModel"
@@ -66,8 +71,8 @@
               type="text"
               [placeholder]="
                 !message.valid && message.touched
-                  ? 'Please enter a message'
-                  : 'Hello Dani, I am interested in...'
+                  ? ('contact.message.error' | translate)
+                  : ('contact.message.placeholder' | translate)
               "
               [class.input-error]="!message.valid && message.touched"
               class="input-text"
@@ -93,19 +98,19 @@
           </span>
 
           <p class="checkbox-text">
-            I've read the
+            {{ 'contact.checkbox.label-01' | translate }}
             <a href="" target="_blank" class="link-highlight">
-              privacy policy<span class="hover-line"></span>
+              {{ 'contact.checkbox.label-02' | translate }}<span class="hover-line"></span>
             </a>
-            and agree to the processing of my data as outlined.
+            {{ 'contact.checkbox.label-03' | translate }}
           </p>
         </label>
         @if (consent.invalid && consent.touched) {
-        <span class="error-message">Please accept the privacy policy.</span>
+          <span class="error-message">{{ 'contact.checkbox.error' | translate }}</span>
         }
 
         <button class="contact-submit-button button-animated" [disabled]="!consent.valid">
-          <span class="button-text">Say Hello ;)</span>
+          <span class="button-text">{{ 'contact.send' | translate }}</span>
         </button>
       </form>
     </div>
