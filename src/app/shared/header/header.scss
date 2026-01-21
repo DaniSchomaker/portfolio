@@ -63,9 +63,9 @@ nav a:hover .hover-point {
    ========================= */
 
 .logo {
-  width: 133px;
-  height: 48px;
-  background-image: url('../../../../public/img/hero/Logo-filled.svg');
+  width: 112px;
+  height: 70px;
+  background-image: url('../../../../public/img/logo/logo.png');
   background-size: contain;
   background-repeat: no-repeat;
   transition: background-image 0.1s ease;
@@ -73,7 +73,7 @@ nav a:hover .hover-point {
 }
 
 .logo:hover {
-  background-image: url('../../../../public/img/hero/Logo-outlines.svg');
+  background-image: url('../../../../public/img/logo/logo-hover.png');
 }
 
 /* =========================
