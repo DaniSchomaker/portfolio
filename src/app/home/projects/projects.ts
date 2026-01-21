@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { PROJECTS, Project } from '../../interfaces/project.interface';
 import { Dialog } from './dialog/dialog';
+import { TranslatePipe } from '@ngx-translate/core';
 
 type ProjectTechEntry = {
   name: string;
@@ -11,7 +12,7 @@ type ProjectTechEntry = {
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, Dialog],
+  imports: [CommonModule, Dialog, TranslatePipe],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
