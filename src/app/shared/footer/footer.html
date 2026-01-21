@@ -9,7 +9,7 @@
 
           <div class="brand-text">
             <p>{{ 'footer.jobtitle' | translate }}</p>
-            <p>Duisburg Germany</p>
+            <p>{{ 'footer.location' | translate }}</p>
           </div>
         </div>
 
@@ -28,7 +28,11 @@
           </a>
           <a routerLink="/legal-notice">
             <span class="hover-point"></span>
-            Legal Notice
+            {{ 'footer.legal-notice' | translate }}
+          </a>
+          <a routerLink="/privacy-policy">
+            <span class="hover-point"></span>
+            {{ 'footer.privacy-policy' | translate }}
           </a>
         </nav>
       </div>
