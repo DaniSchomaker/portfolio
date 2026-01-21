@@ -1,7 +1,7 @@
 {
   "header": {
     "navigation-about-me": "Über mich",
-    "navigation-skills": "Fähigkeiten",
+    "navigation-skills": "Skills",
     "navigation-projects": "Projekte"
   },
 
@@ -15,7 +15,6 @@
     "banner-04": "Gamification",
     "banner-05": "digitale Steuer-Tools",
     "banner-06": "Forschung"
-
   },
 
   "aboutMe": {
@@ -23,11 +22,65 @@
     "title": "Über mich",
     "intro": "Hi, ich bin Dani. Als Frontend-Entwicklerin und Steuerberaterin mit wissenschaftlichem Hintergrund begeistert mich die Schnittstelle von Steuerrecht, Bildung und Technologie. Mein Wirkungsbereich: TaxTech & EdTech",
     "residence": "Mein Lebensmittelpunkt ist der Duisburger Westen, und ich bin offen für projektbasierte Zusammenarbeit, sowohl regional als auch remote",
-    "openness": "Ich lerne gerne neue Technologien kennen und nutze sie, um passende Lösungen für konkrete Herausforderungen zu entwickeln.",
-    "improve": "Ich arbeite mich gerne Schritt für Schritt durch komplexe Fragestellungen und sehe jedes Projekt als Chance, mich weiterzuentwickeln."
+    "openness": "Ich lerne gerne neue Technologien kennen und nutze sie, um passende Lösungen für konkrete Fragestellungen zu entwickeln.",
+    "improve": "Ich arbeite mich gerne Schritt für Schritt durch komplexe Fragestellungen, schätze die Zusammenarbeit mit anderen und sehe jedes Projekt als Chance zur Weiterentwicklung."
+  },
+
+  "skills": {
+    "subtitle": "Technologien",
+    "title": "Skill Set",
+    "stack": "Meine Erfahrung umfasst Forschungsprojekte mit Mikrosimulations- und Optimierungsmodellen sowie Serious Games und gamifizierte Lernformate. Mein Frontend-Schwerpunkt liegt auf Webentwicklung, insbesondere mit Angular und TypeScript.",
+    "span-01": "Dein Projekt braucht",
+    "span-02": "noch eine weitere Technologie?",
+    "contact": "Melde dich gerne. Je nach Projektbedarf bin ich auch offen für Python, C# oder andere Technologien."
+  },
+
+  "projects": {
+    "subtitle": "Portfolio",
+    "title": "Ausgewählte Frontend-Projekte",
+    "introduction": "Entdecke eine Auswahl meiner Frontend-Projekte, um zu sehen, wie Ideen in digitale Lösungen übersetzt werden."
+  },
+
+  "contact": {
+    "subtitle": "Kontaktiere mich",
+    "title": "Lass uns gemeinsam gestalten",
+    "problem": "Du hast ein Problem zu lösen?",
+    "invitation": "Du hast Ideen für ein Forschungsprojekt, interessierst dich für Serious Games oder möchtest digitale Lösungen im Bereich TaxTech oder EdTech umsetzen?",
+    "need": "Du suchst eine Programmiererin?",
+    "talk": "Ich freue mich auf den Austausch.",
+
+    "name": {
+      "label": "Wie heißt Du?",
+      "placeholder": "Dein Name",
+      "error": "Bitte gib Deinen Namen ein."
+    },
+
+    "email": {
+      "label": "Wie lautet Deine E-Mail-Adresse?",
+      "placeholder": "deineEmail@email.de",
+      "error": "Bitte gib Deine E-Mail-Adresse ein."
+    },
+
+    "message": {
+      "label": "Wie kann ich Dir helfen?",
+      "placeholder": "Deine Nachricht",
+      "error": "Bitte gib eine Nachricht ein."
+    },
+
+    "checkbox": {
+      "label-01": "Ich habe die",
+      "label-02": "Datenschutzerklärung",
+      "label-03": "gelesen und stimme der Verarbeitung meiner Daten zu.",
+      "error": "Bitte akzeptiere die Datenschutzerklärung."
+    },
+
+    "send": "Nachricht senden"
   },
 
   "footer": {
-    "jobtitle": "Web Entwicklerin"
+    "jobtitle": "Webentwicklerin",
+    "location": "Duisburg, Deutschland",
+    "legal-notice": "Impressum",
+    "privacy-policy": "Datenschutz"
   }
 }

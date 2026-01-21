@@ -22,11 +22,65 @@
     "title": "About me",
     "intro": "Hi, I’m Dani. As a frontend developer and certified tax advisor with a research background, I’m fascinated by the intersection of tax law, education and technology. My Playground: TaxTech & EdTech.",
     "residence": "I’m based in the western part of Duisburg and open to project-based collaboration, both regionally and remotely.",
-    "openness": "I enjoy learning new technologies and using them to develop suitable solutions for concrete challenges.",
-    "improve": "I enjoy working through complex questions step by step and seeing every project as an opportunity to improve."
+    "openness": "My interest in continuous learning drives me to explore new technologies and use them to develop suitable solutions for concrete challenges.",
+    "improve": "I enjoy working through complex questions step by step, value collaboration, and see every project as an opportunity to improve."
+  },
+
+  "skills": {
+    "subtitle": "Technologies",
+    "title": "Skill Set",
+    "stack": "My experience includes research projects involving microsimulation and optimization models, as well as Serious Games and gamified learning formats. My frontend work focuses on web-based development, with a particular focus on Angular and TypeScript.",
+    "span-01": "Your project needs",
+    "span-02": "another skill?",
+    "contact": "Feel free to get in touch. I’m open to expanding my tech stack, such as Python or C#, depending on project needs."
+  },
+
+  "projects": {
+    "subtitle": "Portfolio",
+    "title": "Featured Frontend Projects",
+    "introduction": "Explore a selection of my frontend work and interact with the projects to see how ideas are translated into digital solutions."
+  },
+
+  "contact": {
+    "subtitle": "Contact me",
+    "title": "Let’s work together",
+    "problem": "Got a problem to solve?",
+    "invitation": "Do you have ideas for a research project, an interest in serious games, or are you looking for digital solutions in TaxTech or EdTech?",
+    "need": "Need a developer?",
+    "talk": "Let’s talk!",
+
+    "name": {
+      "label": "What's your name?",
+      "placeholder": "Your name goes here",
+      "error": "Your name is required."
+    },
+
+    "email": {
+      "label": "What's your email?",
+      "placeholder": "youremail@email.com",
+      "error": "Your email is required."
+    },
+
+    "message": {
+      "label": "How can I help you?",
+      "placeholder": "Enter your message",
+      "error": "Please enter a message."
+    },
+
+    "checkbox": {
+      "label-01": "I've read the",
+      "label-02": "privacy policy",
+      "label-03": "and agree to the processing of my data as outlined.",
+      "error": "Please accept the privacy policy."
+    },
+
+    "send": "Send message"
   },
 
   "footer": {
-    "jobtitle": "Web Developer"
+    "jobtitle": "Web Developer",
+    "location": "Duisburg, Germany",
+    "legal-notice": "Legal Notice",
+    "privacy-policy": "Privacy Policy"
   }
 }
