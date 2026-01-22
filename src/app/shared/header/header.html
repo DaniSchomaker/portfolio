@@ -5,6 +5,7 @@
         <button
           class="language-button"
           [class.active]="currentLanguage === 'en'"
+          [attr.aria-pressed]="currentLanguage === 'en'"
           (click)="useLanguage('en')"
         >
           EN
@@ -12,6 +13,7 @@
         <button
           class="language-button"
           [class.active]="currentLanguage === 'de'"
+          [attr.aria-pressed]="currentLanguage === 'de'"
           (click)="useLanguage('de')"
         >
           DE
@@ -66,6 +68,7 @@
           <button
             class="language-button"
             [class.active]="currentLanguage === 'en'"
+            [attr.aria-pressed]="currentLanguage === 'en'"
             (click)="useLanguage('en')"
           >
             EN
@@ -73,6 +76,7 @@
           <button
             class="language-button"
             [class.active]="currentLanguage === 'de'"
+            [attr.aria-pressed]="currentLanguage === 'de'"
             (click)="useLanguage('de')"
           >
             DE

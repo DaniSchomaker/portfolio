@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -9,11 +9,17 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header {
+export class Header implements OnInit {
   private translate = inject(TranslateService);
 
-  currentLanguage: 'en' | 'de' = 'en';
+  currentLanguage: 'en' | 'de' = 'de';
   menuOpen = false;
+
+  ngOnInit(): void {
+    const lang = (this.translate.currentLang || this.translate.getDefaultLang() || 'de') as 'en' | 'de';
+    this.currentLanguage = lang;
+    this.applyLanguageClass(lang);
+  }
 
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
@@ -26,7 +32,10 @@ export class Header {
   useLanguage(language: 'en' | 'de'): void {
     this.currentLanguage = language;
     this.translate.use(language);
+    this.applyLanguageClass(language);
+  }
 
+  private applyLanguageClass(language: 'en' | 'de'): void {
     document.documentElement.classList.remove('language-en', 'language-de');
     document.documentElement.classList.add('language-' + language);
   }
