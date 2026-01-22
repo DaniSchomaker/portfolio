@@ -13,7 +13,7 @@
     "banner-02": "Frontend Entwicklung",
     "banner-03": "Serious Games",
     "banner-04": "Gamification",
-    "banner-05": "digitale Steuer-Tools",
+    "banner-05": "Digitale Steuer-Tools",
     "banner-06": "Forschung"
   },
 
@@ -38,7 +38,20 @@
   "projects": {
     "subtitle": "Portfolio",
     "title": "Ausgewählte Frontend-Projekte",
-    "introduction": "Entdecke eine Auswahl meiner Frontend-Projekte, um zu sehen, wie Ideen in digitale Lösungen übersetzt werden."
+    "introduction": "Entdecke eine Auswahl meiner Frontend-Projekte, um zu sehen, wie Ideen in digitale Lösungen übersetzt werden.",
+    "question": "Worum geht es in diesem Projekt?",
+    "items": {
+      "pokedex": {
+        "shortDescription": "Eine responsive Pokédex-App, die Pokémon-Daten aus der PokéAPI lädt und anschaulich darstellt."
+      },
+      "el-pollo-loco": {
+        "shortDescription": "Jump-&-Run-Spiel auf Basis objektorientierter Programmierung. Hilf Pepe dabei, Münzen und Tabasco zu sammeln, um gegen das verrückte Huhn zu kämpfen."
+      },
+      "join": {
+        "shortDescription": "Task-Manager, inspiriert vom Kanban-System, zur übersichtlichen Planung und Verwaltung von Aufgaben und Workflows."
+      }
+    },
+    "next": "Nächstes Projekt"
   },
 
   "contact": {

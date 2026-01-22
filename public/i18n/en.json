@@ -13,14 +13,14 @@
     "banner-02": "Frontend Development",
     "banner-03": "Serious Games",
     "banner-04": "Gamification",
-    "banner-05": "digital tax tools",
+    "banner-05": "Digital Tax Tools",
     "banner-06": "Research"
   },
 
   "aboutMe": {
     "subtitle": "Who I am",
     "title": "About me",
-    "intro": "Hi, I’m Dani. As a frontend developer and certified tax advisor with a research background, I’m fascinated by the intersection of tax law, education and technology. My Playground: TaxTech & EdTech.",
+    "intro": "Hi, I’m Dani. As a Frontend developer and certified tax advisor with a research background, I’m fascinated by the intersection of tax law, education and technology. My Playground: TaxTech & EdTech.",
     "residence": "I’m based in the western part of Duisburg and open to project-based collaboration, both regionally and remotely.",
     "openness": "My interest in continuous learning drives me to explore new technologies and use them to develop suitable solutions for concrete challenges.",
     "improve": "I enjoy working through complex questions step by step, value collaboration, and see every project as an opportunity to improve."
@@ -29,7 +29,7 @@
   "skills": {
     "subtitle": "Technologies",
     "title": "Skill Set",
-    "stack": "My experience includes research projects involving microsimulation and optimization models, as well as Serious Games and gamified learning formats. My frontend work focuses on web-based development, with a particular focus on Angular and TypeScript.",
+    "stack": "My experience includes research projects involving microsimulation and optimization models, as well as Serious Games and gamified learning formats. My Frontend work focuses on web-based development, with a particular focus on Angular and TypeScript.",
     "span-01": "Your project needs",
     "span-02": "another skill?",
     "contact": "Feel free to get in touch. I’m open to expanding my tech stack, such as Python or C#, depending on project needs."
@@ -37,8 +37,21 @@
 
   "projects": {
     "subtitle": "Portfolio",
-    "title": "Featured Frontend Projects",
-    "introduction": "Explore a selection of my frontend work and interact with the projects to see how ideas are translated into digital solutions."
+    "title": "Featured Frontend Projects",    
+    "introduction": "Explore a selection of my Frontend work and interact with the projects to see how ideas are translated into digital solutions.",
+    "question": "What is this project about?",
+    "items": {
+      "pokedex": {
+        "shortDescription": "A responsive Pokédex application that retrieves structured data from the PokéAPI and renders each Pokémon with clean UI elements."
+      },
+      "el-pollo-loco": {
+        "shortDescription": "Jump & run game based on an object-oriented approach. Help Pepe find coins and tabasco salsa to fight the crazy hen."
+      },
+      "join": {
+        "shortDescription": "Kanban-inspired task manager for planning and managing tasks and workflows."
+      }
+    },
+    "next": "Next project"
   },
 
   "contact": {

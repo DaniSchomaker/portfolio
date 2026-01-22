@@ -8,8 +8,8 @@
       <div class="info-column">
         <h1>{{ project.id }}</h1>
         <h2>{{ project.title }}</h2>
-        <h3>What is this project about?</h3>
-        <p>{{ project.shortDescription }}</p>
+        <h3>{{ 'projects.question' | translate }}</h3>
+        <p>{{ project.shortDescriptionKey | translate }}</p>
 
         <div class="project-tech">
           @for (item of project.tech; track item) {
@@ -48,7 +48,7 @@
     </div>
 
     <button class="next-project-button" type="button" (click)="onNextClick($event)">
-      Next project
+      {{ 'projects.next' | translate }}
       <img src="img/icons/dialog-arrow-forward-light.svg" alt="" />
     </button>
   </div>
