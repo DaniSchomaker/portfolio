@@ -81,9 +81,10 @@
           </div>
         </div>
 
-        <label class="consent-label">
+        <div class="consent-label">
           <input
             type="checkbox"
+            id="consent"
             name="consent"
             ngModel
             #consent="ngModel"
@@ -92,19 +93,20 @@
             [class.checkbox-error]="consent.invalid && consent.touched"
           />
 
-          <span class="custom-checkbox">
+          <label for="consent" class="custom-checkbox">
             <img src="img/icons/contact-check.png" alt="checkbox" class="check" />
             <img src="img/icons/contact-check-hover.svg" alt="" class="hover-circle" />
-          </span>
+          </label>
 
           <p class="checkbox-text">
             {{ 'contact.checkbox.label-01' | translate }}
-            <a href="" target="_blank" class="link-highlight">
+            <a routerLink="/privacy-policy" class="link-highlight">
               {{ 'contact.checkbox.label-02' | translate }}<span class="hover-line"></span>
             </a>
             {{ 'contact.checkbox.label-03' | translate }}
           </p>
-        </label>
+        </div>
+
         @if (consent.invalid && consent.touched) {
           <span class="error-message">{{ 'contact.checkbox.error' | translate }}</span>
         }

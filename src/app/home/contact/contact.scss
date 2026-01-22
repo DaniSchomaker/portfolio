@@ -8,7 +8,7 @@
 }
 
 h2 {
-  padding: 32px 0 $p-medium 0; //#das übernehmen als standard?
+  padding: 20px 0 $p-medium 0; 
 }
 
 h3 {
@@ -25,7 +25,6 @@ h3 {
   }
 
   > p > span {
-    // #so auch in skills?
     font-weight: bold;
     color: $color-highlight;
   }
@@ -125,7 +124,7 @@ input {
 
 .consent-checkbox {
   position: absolute;
-  opacity: 0; // echtes Inputfeld verstecken
+  opacity: 0; 
   pointer-events: none;
 }
 
