@@ -1,0 +1,16 @@
+@use '../styles/mixins' as *;
+
+html,
+body {
+  height: 100%;
+}
+
+.app-shell {
+  min-height: 100vh;
+  @include dFlex($fd: column, $ai: stretch);
+}
+
+.app-main {
+  flex: 1;      
+  min-height: 0; 
+}
