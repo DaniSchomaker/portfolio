@@ -1,18 +1,30 @@
+/**
+ * Technology entry used in a project.
+ */
 export interface ProjectTech {
   icon: string;
   name: string;
 }
 
+/**
+ * Project definition used for the projects overview and dialog.
+ */
 export interface Project {
   id: string;
   title: string;
+
+  /** Translation key for the short project description. */
   shortDescriptionKey: string;
+
   tech: ProjectTech[];
   image: string;
   github: string;
   live: string;
 }
 
+/**
+ * Static list of available projects.
+ */
 export const PROJECTS: Project[] = [
   {
     id: '01',
@@ -22,8 +34,7 @@ export const PROJECTS: Project[] = [
       { icon: 'img/icons/dialog-html.svg', name: 'HTML' },
       { icon: 'img/icons/dialog-css.svg', name: 'CSS' }
     ],
-    shortDescriptionKey:
-      'projects.items.pokedex.shortDescription',
+    shortDescriptionKey: 'projects.items.pokedex.shortDescription',
     image: 'img/projects/pokedex.png',
     github: 'https://github.com/DaniSchomaker/Pokedex',
     live: 'https://pokedex.taxedtech.de',
@@ -34,7 +45,7 @@ export const PROJECTS: Project[] = [
     tech: [
       { icon: 'img/icons/dialog-javascript.svg', name: 'JavaScript' },
       { icon: 'img/icons/dialog-html.svg', name: 'HTML' },
-      { icon: 'img/icons/dialog-css.svg', name: 'CSS' }      
+      { icon: 'img/icons/dialog-css.svg', name: 'CSS' }
     ],
     shortDescriptionKey: 'projects.items.el-pollo-loco.shortDescription',
     image: 'img/projects/el-pollo-loco.png',

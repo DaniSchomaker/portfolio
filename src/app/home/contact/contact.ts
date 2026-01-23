@@ -4,9 +4,11 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
+/**
+ * Contact form component handling form submission and user feedback.
+ */
 @Component({
   selector: 'app-contact',
-  standalone: true,
   imports: [FormsModule, TranslatePipe, RouterLink],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
@@ -14,16 +16,25 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class Contact {
   private http = inject(HttpClient);
 
+  /** Form-bound contact data. */
   contactData = {
     name: '',
     email: '',
     message: '',
   };
 
+  /** Indicates whether the form is currently being submitted. */
   isSending = false;
+
+  /** Controls visibility of the success message. */
   showSuccess = false;
+
+  /** Controls visibility of the error message. */
   showError = false;
 
+  /**
+   * Submits the contact form data if the form is valid.
+   */
   onSubmit(ngForm: NgForm) {
     if (ngForm.invalid) {
       ngForm.control.markAllAsTouched();

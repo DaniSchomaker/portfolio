@@ -2,15 +2,18 @@ import {
   ApplicationConfig,
   provideBrowserGlobalErrorListeners,
   provideZoneChangeDetection,
-  inject
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient } from "@angular/common/http";
-import { provideTranslateService, TranslateService } from "@ngx-translate/core";
-import { provideTranslateHttpLoader } from "@ngx-translate/http-loader";
+import { provideHttpClient } from '@angular/common/http';
+import { provideTranslateService, TranslateService } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { routes } from './app.routes';
 
+/**
+ * Global application configuration including routing, HTTP,
+ * error handling, zone optimization, and translation setup.
+ */
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),

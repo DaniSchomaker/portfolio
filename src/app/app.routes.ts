@@ -3,7 +3,9 @@ import { Home } from './home/home';
 import { LegalNotice } from './legal-notice/legal-notice';
 import { PrivacyPolicy } from './privacy-policy/privacy-policy';
 
-
+/**
+ * Application route configuration.
+ */
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'legal-notice', component: LegalNotice },

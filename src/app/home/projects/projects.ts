@@ -9,16 +9,20 @@ type ProjectTechEntry = {
   isLast: boolean;
 };
 
+/**
+ * Projects overview component with dialog-based project details.
+ */
 @Component({
   selector: 'app-projects',
-  standalone: true,
   imports: [CommonModule, Dialog, TranslatePipe],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
 export class Projects {
+  /** List of available projects. */
   readonly projects: Project[] = PROJECTS;
 
+  /** Currently selected project for the dialog view. */
   selectedProject: Project | null = null;
 
   openDialog(project: Project) {
@@ -45,6 +49,9 @@ export class Projects {
     return `project-${project.id}`;
   }
 
+  /**
+   * Maps project technologies to entries with positional metadata.
+   */
   getTechEntries(project: Project): ProjectTechEntry[] {
     return project.tech.map((techItem, index) => ({
       name: techItem.name,

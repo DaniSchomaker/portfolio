@@ -3,17 +3,24 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Project } from '../../../interfaces/project.interface';
 import { TranslatePipe } from '@ngx-translate/core';
 
+/**
+ * Modal dialog for displaying a project.
+ */
 @Component({
   selector: 'app-dialog',
-  standalone: true,
   imports: [CommonModule, TranslatePipe],
   templateUrl: './dialog.html',
   styleUrl: './dialog.scss',
 })
 export class Dialog {
+  /** Project displayed in the dialog. */
   @Input() project!: Project;
+
+  /** Emits when the dialog should be closed. */
   @Output() close = new EventEmitter<void>();
-  @Output() next = new EventEmitter<void>();  
+
+  /** Emits when the next project is requested. */
+  @Output() next = new EventEmitter<void>();
 
   onOverlayClick() {
     this.close.emit();
@@ -24,8 +31,7 @@ export class Dialog {
   }
 
   onNextClick(event: MouseEvent) {
-    event.stopPropagation();   
+    event.stopPropagation();
     this.next.emit();
   }
 }
-

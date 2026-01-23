@@ -2,9 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
+/**
+ * Header component handling navigation state and language switching.
+ */
 @Component({
   selector: 'app-header',
-  standalone: true,
   imports: [CommonModule, TranslatePipe],
   templateUrl: './header.html',
   styleUrl: './header.scss',
@@ -12,7 +14,10 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 export class Header implements OnInit {
   private translate = inject(TranslateService);
 
+  /** Currently active language. */
   currentLanguage: 'en' | 'de' = 'de';
+
+  /** Indicates whether the mobile menu is open. */
   menuOpen = false;
 
   ngOnInit(): void {
@@ -29,6 +34,9 @@ export class Header implements OnInit {
     this.menuOpen = false;
   }
 
+  /**
+   * Switches the application language.
+   */
   useLanguage(language: 'en' | 'de'): void {
     this.currentLanguage = language;
     this.translate.use(language);

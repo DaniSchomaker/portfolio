@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+/**
+ * Legal notice page component with page-specific background styling.
+ */
 @Component({
   selector: 'app-legal-notice',
   imports: [],
@@ -7,7 +10,6 @@ import { Component } from '@angular/core';
   styleUrl: './legal-notice.scss',
 })
 export class LegalNotice {
-
   ngOnInit() {
     document.body.classList.add('legal-notice-bg');
   }

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+/**
+ * Privacy policy page component with page-specific background styling.
+ */
 @Component({
   selector: 'app-privacy-policy',
   imports: [],

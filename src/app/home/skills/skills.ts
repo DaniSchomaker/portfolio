@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
+/**
+ * Skills component displaying a list of technical and soft skills.
+ */
 @Component({
   selector: 'app-skills',
   imports: [TranslatePipe],
@@ -8,6 +11,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './skills.scss',
 })
 export class Skills {
+  /** List of skills with display name and icon source. */
   skills = [
     {
       name: 'HTML',
