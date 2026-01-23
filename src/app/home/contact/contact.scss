@@ -60,7 +60,7 @@ input {
   @include item-divider();
   padding: 32px;
   border-top-color: rgba($color-highlight, 0.5);
-  transition: border-color 0.3s ease;
+  transition: border-color $transition-speed ease;
 
   &:last-child {
     border-bottom-color: rgba($color-highlight, 0.5);
@@ -114,7 +114,7 @@ input {
 
   &::placeholder {
     color: rgba($color-white, 0.4);
-    transition: color 0.3s ease;
+    transition: color $transition-speed ease;
   }
 
   &.input-error::placeholder {
@@ -179,7 +179,7 @@ input {
   width: 24px;
   height: 24px;
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity $transition-speed ease;
   cursor: pointer;
 }
 
@@ -226,7 +226,7 @@ input {
 .contact-submit-button {
   display: block;
   margin: $p-medium auto 0;
-  transition: opacity 0.3s ease;
+  transition: opacity $transition-speed ease;
 
   &:disabled {
     opacity: 0.5;

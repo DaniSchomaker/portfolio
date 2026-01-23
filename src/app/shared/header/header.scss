@@ -72,7 +72,7 @@ nav a:hover .hover-point {
   background-image: url('../../../../public/img/logo/logo.png');
   background-size: contain;
   background-repeat: no-repeat;
-  transition: background-image 0.1s ease;
+  transition: background-image $transition-speed ease;
   order: 3;
 }
 
@@ -108,7 +108,7 @@ nav a:hover .hover-point {
   color: rgba($color: $color-highlight, $alpha: 0.5);
   cursor: pointer;
   z-index: 2;
-  transition: color 0.25s ease;
+  transition: color $transition-speed ease;
   padding: 0;
 
   &:hover {
@@ -130,7 +130,7 @@ nav a:hover .hover-point {
   height: 28px;
   border-radius: 999px;
   z-index: 1;
-  transition: transform 0.25s ease;
+  transition: transform $transition-speed ease;
 }
 
 :host-context(.language-en) .language-slider {
@@ -161,7 +161,7 @@ nav a:hover .hover-point {
     display: block;
     width: 48px;
     height: 48px;
-    transition: opacity 0.2s ease;
+    transition: opacity $transition-speed ease;
   }
 
   &:hover img {

@@ -44,7 +44,7 @@ a {
   background-image: url('../../../../public/img/logo/logo.png');
   background-size: contain;
   background-repeat: no-repeat;
-  transition: background-image 0.1s ease;
+  transition: background-image $transition-speed ease;
 }
 
 .logo:hover {
@@ -65,7 +65,7 @@ a {
 
 nav a {
   position: relative;
-  transition: color 0.5s ease;
+  transition: color $transition-speed ease;
 
   &:hover {
     color: $color-highlight;
@@ -78,7 +78,7 @@ nav a .hover-point {
   left: -12px;
   top: 50%;
   transform: translateY(-50%);
-  transition: opacity 0.5s ease;
+  transition: opacity $transition-speed ease;
   opacity: 0;
 }
 

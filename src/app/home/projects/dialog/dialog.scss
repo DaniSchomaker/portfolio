@@ -186,7 +186,7 @@ p {
     img {
       height: 20px;
       transform: translate(0, 0) rotate(-45deg);
-      transition: transform 0.2s ease;
+      transition: transform $transition-speed ease;
     }
   }
 }
@@ -220,11 +220,11 @@ p {
   padding: 0;
   cursor: pointer;
   color: $color-highlight;
-  transition: color 0.3s ease;
+  transition: color $transition-speed ease;
   background: transparent;
 
   > img {
-    transition: transform 1s ease;
+    transition: transform $transition-speed ease;
   }
 
   &:hover {

@@ -63,7 +63,7 @@ h2 {
   @include item-divider();
   position: relative;
   padding: 40px 32px;
-  transition: background-color 0.3s ease;
+  transition: background-color $transition-speed ease;
 
   > p {
     font-size: 18px;
@@ -94,7 +94,7 @@ h2 {
   width: 12.58px;
   height: 12.58px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity $transition-speed ease;
 }
 
 .color-highlight {
@@ -116,7 +116,7 @@ h2 {
 
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity $transition-speed ease;
 }
 
 /* =========================

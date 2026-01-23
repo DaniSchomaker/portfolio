@@ -109,7 +109,7 @@
   line-height: 1.2;
   letter-spacing: 0;
   color: rgba($color: $color-white, $alpha: 0.8);
-  transition: color 0.3s ease;
+  transition: color $transition-speed ease;
   margin-right: 32px;
 
   &:hover {

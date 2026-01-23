@@ -112,7 +112,7 @@ h1 {
 .email {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  transition: color 0.3s ease;
+  transition: color $transition-speed ease;
   font-size: 18px;
   font-weight: 400;
   position: absolute;
