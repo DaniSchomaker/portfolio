@@ -45,7 +45,7 @@
         "shortDescription": "A responsive Pokédex application that retrieves structured data from the PokéAPI and renders each Pokémon with clean UI elements."
       },
       "el-pollo-loco": {
-        "shortDescription": "Object-oriented jump-and-run game: coins, Tabasco, and a pretty crazy chicken."
+        "shortDescription": "A jump-and-run game built using object-oriented programming."
       },
       "join": {
         "shortDescription": "Kanban-inspired task manager for planning and managing tasks and workflows."
