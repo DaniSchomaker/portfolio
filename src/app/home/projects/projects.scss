@@ -64,6 +64,7 @@ h2 {
   position: relative;
   padding: 40px 32px;
   transition: background-color $transition-speed ease;
+  cursor: pointer;
 
   > p {
     font-size: 18px;
