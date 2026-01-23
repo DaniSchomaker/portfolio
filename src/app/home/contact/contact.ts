@@ -12,19 +12,58 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './contact.scss',
 })
 export class Contact {
-
-  http = inject(HttpClient);
+  private http = inject(HttpClient);
 
   contactData = {
-    name: "",
-    email: "",
-    message: "",
-  }
+    name: '',
+    email: '',
+    message: '',
+  };
+
+  isSending = false;
+  showSuccess = false;
+  showError = false;
 
   onSubmit(ngForm: NgForm) {
-    if(ngForm.valid && ngForm.submitted) {
-      console.log(this.contactData)
+    if (ngForm.invalid) {
+      ngForm.control.markAllAsTouched();
+      return;
     }
-  }
 
+    this.isSending = true;
+    this.showSuccess = false;
+    this.showError = false;
+
+    this.http
+      .post('/api/sendMail.php', this.contactData, { responseType: 'text' })
+      .subscribe({
+        next: (res) => {
+          const response = String(res).trim();
+
+          if (response !== 'OK') {
+            this.showError = true;
+            return;
+          }
+
+          this.showSuccess = true;
+          ngForm.resetForm();
+
+          setTimeout(() => {
+            this.showSuccess = false;
+          }, 4000);
+        },
+        error: () => {
+          this.showError = true;
+        },
+        complete: () => {
+          this.isSending = false;
+
+          if (this.showError) {
+            setTimeout(() => {
+              this.showError = false;
+            }, 4000);
+          }
+        },
+      });
+  }
 }

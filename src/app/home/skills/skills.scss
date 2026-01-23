@@ -24,7 +24,7 @@
    ========================= */
 
 .info-column {
-  @include dFlex($fd: column, $ai: flex-start, $g: 10px);
+  @include dFlex($fd: column, $ai: flex-start, $g: 20px);
 }
 
 .info-card {
@@ -88,6 +88,7 @@
   grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));
   gap: $p-medium;
   justify-items: center;
+  margin-top: 12px;
 }
 
 .skill-item {
@@ -124,6 +125,10 @@
 @media (max-width: 950px) {
   .layout {
     @include dFlex($fd: column, $ai: stretch, $g: $p-medium);
+  }
+
+  .skills-wrapper {
+    margin-top: 0;
   }
 }
 

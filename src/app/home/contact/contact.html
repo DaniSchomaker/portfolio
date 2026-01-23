@@ -111,9 +111,24 @@
           <span class="error-message">{{ 'contact.checkbox.error' | translate }}</span>
         }
 
-        <button class="contact-submit-button button-animated" [disabled]="!consent.valid">
+        <button
+          class="contact-submit-button button-animated"
+          type="submit"
+          [disabled]="!contactForm.valid || isSending"
+        >
           <span class="button-text">{{ 'contact.send' | translate }}</span>
         </button>
+
+        <div class="form-feedback">
+          @if (showSuccess) {
+            <p class="feedback-message">{{ 'contact.success' | translate }}</p>
+          }
+          @if (showError) {
+            <p class="feedback-message">
+              {{ 'contact.fail' | translate }}
+            </p>
+          }
+        </div>
       </form>
     </div>
   </div>
