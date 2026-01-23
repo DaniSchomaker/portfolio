@@ -2,6 +2,10 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
+/* =========================
+   Layout
+   ========================= */
+
 .layout {
   @include dFlex($ai: flex-start, $g: $p-medium);
   margin: $p-xlarge 0 0 0;
@@ -81,8 +85,7 @@
    List & Items
    ========================= */
 
-.info-list,
-ul {
+.info-list {
   list-style: none;
   padding: 0;
   margin: 0 0 32px 0;
@@ -115,7 +118,7 @@ ul {
 }
 
 /* =========================
-   Responsive 
+   Responsive
    ========================= */
 
 @media (max-width: 950px) {

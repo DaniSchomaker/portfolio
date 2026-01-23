@@ -2,6 +2,10 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
+/* =========================
+   Layout
+   ========================= */
+
 .content-container {
   background-image: url('../../../../public/img/skills/skills-bg.svg');
   background-size: cover;

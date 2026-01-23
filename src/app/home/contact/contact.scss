@@ -2,17 +2,13 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
+/* =========================
+   Layout
+   ========================= */
+
 .layout {
   @include dFlex($jc: space-between, $ai: flex-start, $g: $p-medium);
   margin: 0 0 88px 0;
-}
-
-h2 {
-  padding: 20px 0 $p-medium 0; 
-}
-
-h3 {
-  color: $color-highlight;
 }
 
 .info-column {
@@ -30,17 +26,32 @@ h3 {
   }
 }
 
-.checkbox-text {
-  font-size: 15px;
-}
-
 .contact-form {
   position: relative;
   flex: 1;
   max-width: 50%;
 }
 
-////// Input-Felder
+/* =========================
+   Typography Overrides
+   ========================= */
+
+h2 {
+  padding: 20px 0 $p-medium 0;
+}
+
+h3 {
+  color: $color-highlight;
+}
+
+.checkbox-text {
+  font-size: 15px;
+}
+
+/* =========================
+   Inputs
+   ========================= */
+
 input {
   padding: 0;
 }
@@ -70,6 +81,15 @@ input {
   &:last-child:hover {
     border-bottom-color: $color-highlight;
   }
+}
+
+.contact-question {
+  font-family: $font-highlight;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-highlight;
 }
 
 .input-text {
@@ -102,16 +122,20 @@ input {
   }
 }
 
-.contact-question {
-  font-family: $font-highlight;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0;
-  color: $color-highlight;
+.input-text:-webkit-autofill,
+.input-text:-webkit-autofill:hover,
+.input-text:-webkit-autofill:focus,
+.input-text:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px $color-bg-dark inset !important;
+  box-shadow: 0 0 0 1000px $color-bg-dark inset !important;
+  -webkit-text-fill-color: $color-white !important;
+  caret-color: $color-white;
+  transition: background-color 9999s ease-in-out 0s;
 }
 
-////// Consent / Checkbox
+/* =========================
+   Consent / Checkbox
+   ========================= */
 
 .consent-label {
   @include dFlex($jc: flex-start, $ai: center, $g: 12px);
@@ -124,7 +148,7 @@ input {
 
 .consent-checkbox {
   position: absolute;
-  opacity: 0; 
+  opacity: 0;
   pointer-events: none;
 }
 
@@ -163,7 +187,9 @@ input {
   opacity: 1;
 }
 
-//////Link-Highlight
+/* =========================
+   Link Highlight
+   ========================= */
 
 .link-highlight {
   position: relative;
@@ -193,10 +219,13 @@ input {
   }
 }
 
+/* =========================
+   Submit & Feedback
+   ========================= */
+
 .contact-submit-button {
   display: block;
   margin: $p-medium auto 0;
-
   transition: opacity 0.3s ease;
 
   &:disabled {
@@ -206,10 +235,13 @@ input {
   }
 }
 
+.checkbox-error-slot {
+  min-height: 18px; 
+  margin-top: 8px;
+}
+
 .error-message {
-  position: absolute;
-  bottom: 70px;
-  left: 0;
+  display: block;
   font-family: $font-basic;
   font-size: 14px;
   font-weight: 400;
@@ -219,7 +251,7 @@ input {
 }
 
 .form-feedback {
-  min-height: 40px; 
+  min-height: 40px;
   margin-top: $p-small;
   @include dFlex();
 }
@@ -232,23 +264,16 @@ input {
   text-align: center;
 }
 
-.input-text:-webkit-autofill,
-.input-text:-webkit-autofill:hover,
-.input-text:-webkit-autofill:focus,
-.input-text:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px $color-bg-dark inset !important;
-  box-shadow: 0 0 0 1000px $color-bg-dark inset !important;
-  -webkit-text-fill-color: $color-white !important;
-  caret-color: $color-white;
-  transition: background-color 9999s ease-in-out 0s;
-}
+/* =========================
+   Responsive
+   ========================= */
 
 @media (max-width: 768px) {
   .layout {
     @include dFlex($fd: column, $g: 60px);
     margin: 0 0 40px 0;
   }
-  
+
   .info-column,
   .contact-form {
     width: 100%;
@@ -270,5 +295,4 @@ input {
   .contact-question {
     font-size: 20px;
   }
-
 }

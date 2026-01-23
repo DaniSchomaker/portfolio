@@ -2,6 +2,10 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
+/* =========================
+   Section Layout
+   ========================= */
+
 .hero {
   @include dFlex($fd: column);
 
@@ -22,6 +26,10 @@
   width: 100%;
   flex: 1;
 }
+
+/* =========================
+   Typography
+   ========================= */
 
 h1 {
   font-size: 128px;
@@ -46,7 +54,9 @@ h1 {
   text-align: center;
 }
 
-//////// Buttons
+/* =========================
+   Buttons
+   ========================= */
 
 .hero-buttons {
   @include dFlex($g: 28px);
@@ -54,7 +64,9 @@ h1 {
   cursor: pointer;
 }
 
-//////// Linie links mit Pfeil
+/* =========================
+   Left Line & Arrow
+   ========================= */
 
 .line-arrow-wrapper {
   @include dFlex($fd: column, $g: 20px);
@@ -80,19 +92,15 @@ h1 {
   animation: arrowDownAnimation 1s linear infinite;
 }
 
-@keyframes arrowDownAnimation {
-  0% {
-    transform: translateY(0px);
-  }
-  33% {
-    transform: translateY(6px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.line-left {
+  height: 240px;
+  width: 1px;
+  background-color: $color-highlight;
 }
 
-//////// Linie rechts mit Social-Media-Icons
+/* =========================
+   Right Line & Social Links
+   ========================= */
 
 .line-links-wrapper {
   @include dFlex($fd: column, $g: 20px);
@@ -155,19 +163,16 @@ h1 {
   content: url('../../../../public/img/icons/linkedin-hover.svg');
 }
 
-.line-left {
-  height: 240px;
-  width: 1px;
-  background-color: $color-highlight;
-}
-
 .line-right {
   height: 186px;
   width: 1px;
   background-color: $color-highlight;
 }
 
-//////// Banner ////////
+/* =========================
+   Banner
+   ========================= */
+
 .banner {
   @include dFlex($jc: flex-start, $ai: center);
 
@@ -192,8 +197,31 @@ h1 {
     line-height: 1.2;
     letter-spacing: 0;
     color: $color-highlight;
-    white-space: nowrap; // verhindert Zeilenumbruch
+    white-space: nowrap;
     margin: 0;
+  }
+}
+
+.banner-dot {
+  @include dot();
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 40px;
+}
+
+/* =========================
+   Animations
+   ========================= */
+
+@keyframes arrowDownAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  33% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
@@ -206,15 +234,8 @@ h1 {
   }
 }
 
-.banner-dot {
-  @include dot();
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 40px;
-}
-
 /* =========================
-  RESPONSIVE
+   Responsive
    ========================= */
 
 @media (max-width: 900px) {

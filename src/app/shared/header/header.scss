@@ -18,6 +18,10 @@ header {
   height: 80px;
 }
 
+/* =========================
+   Layout
+   ========================= */
+
 .header-inner {
   @include dFlex($jc: space-between, $ai: center);
   height: 100%;
@@ -162,7 +166,7 @@ nav a:hover .hover-point {
 
   &:hover img {
     content: url('../../../../public/img/icons/burger-hover.svg');
-  } 
+  }
 }
 
 .burger-button.is-open img {
@@ -219,7 +223,7 @@ nav a:hover .hover-point {
 }
 
 /* =========================
-   Responsive (Mobile)
+   Responsive
    ========================= */
 
 @media (max-width: 768px) {

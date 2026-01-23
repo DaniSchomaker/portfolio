@@ -1,4 +1,4 @@
-<section class="contact">
+<section>
   <div class="content-container p-lr">
     <div class="layout">
       <div class="info-column">
@@ -90,7 +90,6 @@
             #consent="ngModel"
             required
             class="consent-checkbox"
-            [class.checkbox-error]="consent.invalid && consent.touched"
           />
 
           <label for="consent" class="custom-checkbox">
@@ -107,9 +106,11 @@
           </p>
         </div>
 
-        @if (consent.invalid && consent.touched) {
-          <span class="error-message">{{ 'contact.checkbox.error' | translate }}</span>
-        }
+        <div class="checkbox-error-slot">
+          @if (consent.invalid && consent.touched) {
+            <span class="error-message">{{ 'contact.checkbox.error' | translate }}</span>
+          }
+        </div>
 
         <button
           class="contact-submit-button button-animated"
