@@ -1,37 +1,54 @@
 <?php
 
 switch ($_SERVER['REQUEST_METHOD']) {
-    case ("OPTIONS"): //Allow preflighting to take place.
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: POST");
-        header("Access-Control-Allow-Headers: content-type");
-        exit;
-        case("POST"): //Send the email;
-            header("Access-Control-Allow-Origin: *");
-            // Payload is not send to $_POST Variable,
-            // is send to php:input as a text
-            $json = file_get_contents('php://input');
-            //parse the Payload from text format to Object
-            $params = json_decode($json);
-    
-            $email = $params->email;
-            $name = $params->name;
-            $message = $params->message;
-    
-            $recipient = 'kontakt@taxedtech.de';  
-            $subject = "Contact From <$email>";
-            $message = "From:" . $name . "<br>" . $message ;
-    
-            $headers   = array();
-            $headers[] = 'MIME-Version: 1.0';
-            $headers[] = 'Content-type: text/html; charset=utf-8';
+  case "OPTIONS":
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type, Accept");
+    exit;
 
-            // Additional headers
-            $headers[] = "From: noreply@mywebsite.com";
+  case "POST":
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: text/plain; charset=utf-8");
 
-            mail($recipient, $subject, $message, implode("\r\n", $headers));
-            break;
-        default: //Reject any non POST or OPTIONS requests.
-            header("Allow: POST", true, 405);
-            exit;
-    } 
+    $json = file_get_contents('php://input');
+    $params = json_decode($json);
+
+    if (!$params || !isset($params->email, $params->name, $params->message)) {
+      http_response_code(400);
+      echo "BAD_REQUEST";
+      exit;
+    }
+
+    $email = trim($params->email);
+    $name = trim($params->name);
+    $userMessage = trim($params->message);
+
+    $recipient = 'kontakt@taxedtech.de';
+    $subject = "Contact From <{$email}>";
+
+    $body = "From: " . htmlspecialchars($name) . "<br>"
+          . "Email: " . htmlspecialchars($email) . "<br><br>"
+          . nl2br(htmlspecialchars($userMessage));
+
+    $headers = [];
+    $headers[] = 'MIME-Version: 1.0';
+    $headers[] = 'Content-type: text/html; charset=utf-8';
+    $headers[] = 'From: TaxEdTech <noreply@taxedtech.de>';
+    $headers[] = 'Reply-To: ' . $email;
+
+    $ok = mail($recipient, $subject, $body, implode("\r\n", $headers));
+
+    if ($ok) {
+      echo "OK";
+      exit;
+    }
+
+    http_response_code(500);
+    echo "MAIL_FAILED";
+    exit;
+
+  default:
+    header("Allow: POST, OPTIONS", true, 405);
+    exit;
+}
