@@ -79,14 +79,13 @@ a {
 
 // body nur für die legal-notice-Seite, damit der Hintergrund hier auch den Footer umfasst
 
+body.privacy-policy-bg,
 body.legal-notice-bg {
   background-image: url('../public/img/Hero_Background.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-
-// Buttons #auslagern
 
 button {
   cursor: pointer;
@@ -139,11 +138,6 @@ button {
     transform: translateX(0);
   }
 }
-
-// .p-lr {
-//   padding-left: $p-medium;
-//   padding-right: $p-medium;
-// }
 
 .p-lr {
   padding-left: $p-large;
