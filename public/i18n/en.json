@@ -29,7 +29,7 @@
   "skills": {
     "subtitle": "Technologies",
     "title": "Skill Set",
-    "stack": "My experience includes research projects involving microsimulation and optimization models, as well as Serious Games and gamified learning formats. My Frontend work focuses on web-based development, with a particular focus on Angular and TypeScript.",
+    "stack": "My technical experience includes research projects involving microsimulation and optimization models, as well as Serious Games and gamified learning formats. My Frontend work focuses on web-based development, with a particular focus on Angular and TypeScript.",
     "span-01": "Your project needs",
     "span-02": "another skill?",
     "contact": "Feel free to get in touch. I’m open to expanding my tech stack, such as Python or C#, depending on project needs."
@@ -45,7 +45,7 @@
         "shortDescription": "A responsive Pokédex application that retrieves structured data from the PokéAPI and renders each Pokémon with clean UI elements."
       },
       "el-pollo-loco": {
-        "shortDescription": "Jump & run game based on an object-oriented approach. Help Pepe find coins and tabasco salsa to fight the crazy hen."
+        "shortDescription": "Object-oriented jump-and-run game: coins, Tabasco, and a pretty crazy chicken."
       },
       "join": {
         "shortDescription": "Kanban-inspired task manager for planning and managing tasks and workflows."
@@ -87,7 +87,9 @@
       "error": "Please accept the privacy policy."
     },
 
-    "send": "Send message"
+    "send": "Send message",
+    "success": "Thanks for your message!",
+    "fail": "Unfortunately, an error occurred. The message was not sent."
   },
 
   "footer": {
