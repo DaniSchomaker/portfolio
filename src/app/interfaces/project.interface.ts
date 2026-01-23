@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
       'projects.items.pokedex.shortDescription',
     image: 'img/projects/pokedex.png',
     github: 'https://github.com/DaniSchomaker/Pokedex',
-    live: 'https://daniela-schomaker.developerakademie.net/Modul%2007/Pokedex/index.html',
+    live: 'https://pokedex.taxedtech.de',
   },
   {
     id: '02',
@@ -39,7 +39,7 @@ export const PROJECTS: Project[] = [
     shortDescriptionKey: 'projects.items.el-pollo-loco.shortDescription',
     image: 'img/projects/el-pollo-loco.png',
     github: 'https://github.com/DaniSchomaker/El_Pollo_Loco',
-    live: '',
+    live: 'https://el-pollo-loco.taxedtech.de',
   },
   {
     id: '03',
@@ -54,6 +54,6 @@ export const PROJECTS: Project[] = [
     shortDescriptionKey: 'projects.items.join.shortDescription',
     image: 'img/projects/join.png',
     github: 'https://github.com/deinRepo/join',
-    live: 'https://join.deinlive.de',
+    live: 'https://join.taxedtech.de',
   },
 ];
