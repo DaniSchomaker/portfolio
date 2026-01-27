@@ -73,11 +73,17 @@ nav a:hover .hover-point {
   background-size: contain;
   background-repeat: no-repeat;
   transition: background-image $transition-speed ease;
-  order: 3;
 }
 
 .logo:hover {
   background-image: url('../../../../public/img/logo/logo-hover.png');
+}
+
+.logo-link {
+  display: block;
+  order: 3;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* =========================

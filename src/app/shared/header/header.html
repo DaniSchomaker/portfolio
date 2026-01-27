@@ -45,46 +45,48 @@
       <img src="img/icons/burger.svg" alt="" />
     </button>
 
-    <div class="logo"></div>
+    <a routerLink="/" fragment="top" aria-label="Go to homepage" class="logo-link">
+      <div class="logo"></div>
+    </a>
   </div>
 
   @if (menuOpen) {
-  <div class="menu-overlay" (click)="closeMenu()">
-    <div class="menu-panel" (click)="$event.stopPropagation()">
-      <div class="menu-links">
-        <a class="menu-link" href="#about-me" (click)="closeMenu()">
-          {{ 'header.navigation-about-me' | translate }}
-        </a>
-        <a class="menu-link" href="#skills" (click)="closeMenu()">
-          {{ 'header.navigation-skills' | translate }}
-        </a>
-        <a class="menu-link" href="#projects" (click)="closeMenu()">
-          {{ 'header.navigation-projects' | translate }}
-        </a>
-      </div>
+    <div class="menu-overlay" (click)="closeMenu()">
+      <div class="menu-panel" (click)="$event.stopPropagation()">
+        <div class="menu-links">
+          <a class="menu-link" href="#about-me" (click)="closeMenu()">
+            {{ 'header.navigation-about-me' | translate }}
+          </a>
+          <a class="menu-link" href="#skills" (click)="closeMenu()">
+            {{ 'header.navigation-skills' | translate }}
+          </a>
+          <a class="menu-link" href="#projects" (click)="closeMenu()">
+            {{ 'header.navigation-projects' | translate }}
+          </a>
+        </div>
 
-      <div class="menu-language">
-        <div class="language-toggle">
-          <button
-            class="language-button"
-            [class.active]="currentLanguage === 'en'"
-            [attr.aria-pressed]="currentLanguage === 'en'"
-            (click)="useLanguage('en')"
-          >
-            EN
-          </button>
-          <button
-            class="language-button"
-            [class.active]="currentLanguage === 'de'"
-            [attr.aria-pressed]="currentLanguage === 'de'"
-            (click)="useLanguage('de')"
-          >
-            DE
-          </button>
-          <div class="language-slider"></div>
+        <div class="menu-language">
+          <div class="language-toggle">
+            <button
+              class="language-button"
+              [class.active]="currentLanguage === 'en'"
+              [attr.aria-pressed]="currentLanguage === 'en'"
+              (click)="useLanguage('en')"
+            >
+              EN
+            </button>
+            <button
+              class="language-button"
+              [class.active]="currentLanguage === 'de'"
+              [attr.aria-pressed]="currentLanguage === 'de'"
+              (click)="useLanguage('de')"
+            >
+              DE
+            </button>
+            <div class="language-slider"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   }
 </header>
