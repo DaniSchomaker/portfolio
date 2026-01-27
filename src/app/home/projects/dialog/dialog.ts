@@ -4,7 +4,12 @@ import { Project } from '../../../interfaces/project.interface';
 import { TranslatePipe } from '@ngx-translate/core';
 
 /**
- * Modal dialog for displaying a project.
+ * Modal dialog component for displaying detailed project information.
+ *
+ * Handles:
+ * - Overlay click to close the dialog
+ * - Event propagation control inside the dialog
+ * - Navigation to the next project
  */
 @Component({
   selector: 'app-dialog',
@@ -13,24 +18,43 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './dialog.scss',
 })
 export class Dialog {
-  /** Project displayed in the dialog. */
+  /**
+   * Project currently displayed inside the dialog.
+   */
   @Input() project!: Project;
 
-  /** Emits when the dialog should be closed. */
+  /**
+   * Emitted when the dialog should be closed.
+   */
   @Output() close = new EventEmitter<void>();
 
-  /** Emits when the next project is requested. */
+  /**
+   * Emitted when the next project should be shown.
+   */
   @Output() next = new EventEmitter<void>();
 
-  onOverlayClick() {
+  /**
+   * Handles clicks on the overlay and triggers dialog close.
+   */
+  onOverlayClick(): void {
     this.close.emit();
   }
 
-  onDialogClick(event: MouseEvent) {
+  /**
+   * Prevents overlay click handling when clicking inside the dialog.
+   *
+   * @param event - Mouse click event
+   */
+  onDialogClick(event: MouseEvent): void {
     event.stopPropagation();
   }
 
-  onNextClick(event: MouseEvent) {
+  /**
+   * Emits a request to navigate to the next project.
+   *
+   * @param event - Mouse click event
+   */
+  onNextClick(event: MouseEvent): void {
     event.stopPropagation();
     this.next.emit();
   }

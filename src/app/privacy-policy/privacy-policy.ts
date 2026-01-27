@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 /**
- * Privacy policy page component with page-specific background styling.
+ * Privacy Policy page component.
+ *
+ * Adds and removes a page-specific body class to apply
+ * dedicated background styling while this view is active.
  */
 @Component({
   selector: 'app-privacy-policy',
@@ -9,12 +12,18 @@ import { Component } from '@angular/core';
   templateUrl: './privacy-policy.html',
   styleUrl: './privacy-policy.scss',
 })
-export class PrivacyPolicy {
-  ngOnInit() {
+export class PrivacyPolicy implements OnInit, OnDestroy {
+  /**
+   * Applies the privacy policy background styling on page entry.
+   */
+  ngOnInit(): void {
     document.body.classList.add('privacy-policy-bg');
   }
 
-  ngOnDestroy() {
+  /**
+   * Removes the privacy policy background styling on page leave.
+   */
+  ngOnDestroy(): void {
     document.body.classList.remove('privacy-policy-bg');
   }
 }

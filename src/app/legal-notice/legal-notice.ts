@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 /**
- * Legal notice page component with page-specific background styling.
+ * Legal Notice page component.
+ *
+ * Applies and removes a page-specific body class to enable
+ * dedicated background styling while this page is active.
  */
 @Component({
   selector: 'app-legal-notice',
@@ -9,12 +12,18 @@ import { Component } from '@angular/core';
   templateUrl: './legal-notice.html',
   styleUrl: './legal-notice.scss',
 })
-export class LegalNotice {
-  ngOnInit() {
+export class LegalNotice implements OnInit, OnDestroy {
+  /**
+   * Applies the legal notice background styling on page entry.
+   */
+  ngOnInit(): void {
     document.body.classList.add('legal-notice-bg');
   }
 
-  ngOnDestroy() {
+  /**
+   * Removes the legal notice background styling on page leave.
+   */
+  ngOnDestroy(): void {
     document.body.classList.remove('legal-notice-bg');
   }
 }

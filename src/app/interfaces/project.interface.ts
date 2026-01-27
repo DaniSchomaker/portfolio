@@ -64,7 +64,7 @@ export const PROJECTS: Project[] = [
     ],
     shortDescriptionKey: 'projects.items.join.shortDescription',
     image: 'img/projects/join.png',
-    github: 'https://github.com/deinRepo/join',
+    github: 'https://github.com/DaniSchomaker/Join',
     live: 'https://join.taxedtech.de',
   },
 ];
